@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eleve_api
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    command: ["npm", "run", "start:dev"]
+  db:
+    image: postgres:17
+    container_name: eleve_db
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./etc/db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: eleve
+      POSTGRES_PASSWORD: eleve
+      POSTGRES_DB: eleve
