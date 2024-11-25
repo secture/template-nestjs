@@ -1,0 +1,17 @@
+{
+    "extends": ["config:base"],
+    "automerge": false,
+    "prConcurrentLimit": 5,
+    "prHourlyLimit": 2,
+    "schedule": ["before 6am on monday"],
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["major"],
+            "automerge": false
+        },
+        {
+            "matchUpdateTypes": ["minor", "patch"],
+            "automerge": true
+        }
+    ]
+}
