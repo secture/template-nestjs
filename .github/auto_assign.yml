@@ -1,0 +1,17 @@
+addAssignees: author
+
+numberOfAssignees: 0
+
+useAssigneeGroups: false
+
+addReviewers: false
+
+runOnDraft: false
+
+skipKeywords:
+  - wip
+  - work in progress
+  - do not merge
+  - don't merge
+  - 🚧
+  - 🙅‍♀️
