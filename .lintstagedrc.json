@@ -1,0 +1,7 @@
+{
+  "*.ts": [
+    "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "tsc -p tsconfig.json --noEmit"
+  ]
+}
