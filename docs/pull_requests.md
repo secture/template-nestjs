@@ -8,6 +8,7 @@
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged and published in downstream modules
+- [ ] Verified the healthcheck endpoint is working as expected.
 
 ## What do code reviewers look for?
 
@@ -21,3 +22,18 @@ Code reviews should look at:
 - [ ] **Comments**: Are the comments clear and useful?
 - [ ] **Style**: Does the code follow our style guides?
 - [ ] **Documentation**: Did the author also update relevant documentation?
+
+### Swagger Documentation Example
+
+```typescript
+@ApiTags('example')
+@Controller('example')
+export class ExampleController {
+  @ApiOperation({ summary: 'Example endpoint' })
+  @ApiResponse({ status: 200, description: 'Success' })
+  @Get()
+  getExample() {
+    return { message: 'Hello, Swagger!' };
+  }
+}
+```

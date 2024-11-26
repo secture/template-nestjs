@@ -124,6 +124,21 @@ Branches should follow this naming pattern:
     - Ensure your code passes all checks (tests, linting, etc.).
     - Add meaningful comments to explain your changes if necessary.
 
+### Testing the Healthcheck
+
+After setting up the development environment, verify the healthcheck endpoint:
+
+```bash
+curl http://localhost:3000/health
+```
+
+### Swagger Integration
+
+Swagger is integrated into the project. All routes must be documented.
+
+- Use decorators like `@ApiTags`, `@ApiOperation`, and `@ApiResponse` in controllers.
+- Access the documentation at [http://localhost:3000/api/docs](http://localhost:3000/api/docs).
+
 ---
 
 ## ✅ Code Quality Checklist

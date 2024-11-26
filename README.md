@@ -106,6 +106,15 @@
 The API documentation is available at:
 [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
 
+### Healthcheck
+
+The healthcheck endpoint provides information about the application's status, including:
+
+- **Database Connection**: Verifies if the database is reachable.
+- **Swagger Availability**: Ensures the API documentation endpoint is accessible.
+
+Endpoint: [http://localhost:3000/health](http://localhost:3000/health)
+
 ### Project Structure
 
 ```plaintext
