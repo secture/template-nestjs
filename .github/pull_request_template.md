@@ -1,6 +1,6 @@
 # Description
 
-Please include a summary of the change and which issue is fixed. 
+Please include a summary of the change and which issue is fixed.
 Include relevant motivation and context. List any dependencies that are required for this change.
 
 [**📜 Issue**](https://your_issue_here.com)
@@ -37,5 +37,6 @@ Provide instructions so we can reproduce. Please also list any relevant details 
 - [ ] Any dependent changes have been merged and published in downstream modules.
 
 # Guides
+
 - [Checklist for the author](../docs/pull_requests.md#checklist-for-the-author)
 - [What do code reviewers look for?](../docs/pull_requests.md#what-do-code-reviewers-look-for)
