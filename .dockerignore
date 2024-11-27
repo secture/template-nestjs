@@ -1,0 +1,30 @@
+# Node modules and local dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Cache and log directories
+logs
+*.log
+*.gz
+
+# Local configuration and files
+.env
+.env.*
+*.local
+
+# OS and editor-specific files
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Git-related files
+.git
+.gitignore
+
+# Temporary files
+*.swp
+*.swo
+*.tmp

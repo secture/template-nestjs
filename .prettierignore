@@ -1,0 +1,10 @@
+# Ignored directories and files
+node_modules
+dist
+coverage
+logs
+*.log
+
+# Local configuration files
+*.env
+*.local
