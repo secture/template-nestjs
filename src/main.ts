@@ -1,14 +1,18 @@
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { WinstonModule } from 'nest-winston';
+import { WINSTON_MODULE_NEST_PROVIDER, WinstonModule } from 'nest-winston';
 import { AppModule } from './app.module';
 import { winstonConfig } from './infrastructure/config/logging.config';
+import { HttpExceptionFilter } from './infrastructure/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: WinstonModule.createLogger(winstonConfig),
   });
+
+  const logger = app.get(WINSTON_MODULE_NEST_PROVIDER);
+  app.useGlobalFilters(new HttpExceptionFilter(logger));
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Élevé')

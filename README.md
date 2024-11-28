@@ -13,6 +13,7 @@
     - [Swagger](#swagger)
     - [Healthcheck](#healthcheck)
     - [Project Structure](#project-structure)
+    - [Error Handling](#error-handling)
     - [Guides](#guides)
 5. [CI/CD and Releases](#-cicd-and-releases)
 6. [Logging System](#-logging-system)
@@ -144,6 +145,22 @@ src/
 ├── app.module.ts         # Root module
 └── main.ts               # Application entry point
 ```
+
+### Error Handling
+
+The API uses a centralized error handling system. All exceptions from the domain layer are transformed into HTTP exceptions and logged for observability.
+
+#### Key Features
+
+- **Domain Exceptions**: Exceptions from the domain are mapped to HTTP exceptions using the `DomainToHttpExceptionMapper`.
+- **Logging**: All exceptions are logged, including their stack trace, status, and response details.
+
+#### Example Mappings
+
+- `NotFoundException` → `404 Not Found`
+- `ValidationException` → `400 Bad Request`
+
+Refer to the [Error Handling Guide](docs/error-handling.md) for more details.
 
 ### Guides
 
