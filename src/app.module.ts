@@ -40,8 +40,8 @@ const mikroORM = MikroOrmModule.forRootAsync({
   inject: [ConfigService],
   useFactory: (configService: ConfigService) => ({
     autoLoadEntities: false,
-    entities: ['./dist/entities'],
-    entitiesTs: ['./src/entities'],
+    entities: ['./dist/domain/entities'],
+    entitiesTs: ['./src/domain/entities'],
     dbName: configService.get<string>('DATABASE_NAME'),
     driver: PostgreSqlDriver,
     user: configService.get<string>('DATABASE_USER'),
