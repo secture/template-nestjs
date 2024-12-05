@@ -1,6 +1,6 @@
 # Backend Style Guide
 
-This document defines the coding conventions and best practices for the Eleve API backend. Following this guide ensures consistency and readability across the codebase.
+This document defines the coding conventions and best practices for the API backend. Following this guide ensures consistency and readability across the codebase.
 
 ---
 

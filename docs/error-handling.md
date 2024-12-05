@@ -1,6 +1,6 @@
 # Error Handling Guide
 
-This guide explains how exceptions are handled in the Eleve API.
+This guide explains how exceptions are handled in the API.
 
 ---
 

@@ -8,10 +8,12 @@ import { TerminusModule } from '@nestjs/terminus';
 import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
+import handles from './handles';
 import { winstonConfig } from './infrastructure/config/logging.config';
 import { LoggingInterceptor } from './infrastructure/interceptors/logging.interceptor';
 import { LoggingService } from './infrastructure/logging/logging.service';
 import { RequestContextMiddleware } from './infrastructure/middleware/request-context.middleware';
+import { VersionCheckMiddleware } from './infrastructure/middleware/version-check.middleware';
 import { AppController } from './presentation/controllers/app.controller';
 import { HealthController } from './presentation/controllers/health.controller';
 
@@ -28,6 +30,20 @@ const configModule = ConfigModule.forRoot({
     DATABASE_PASSWORD: Joi.string().required(),
     DATABASE_HOST: Joi.string().required(),
     DATABASE_PORT: Joi.number().required(),
+    MIN_SUPPORTED_VERSION: Joi.string()
+      .regex(
+        new RegExp(
+          '^(0|[1-9]d*).(0|[1-9]d*).(0|[1-9]d*)(?:-((?:0|[1-9]d*|d*[a-zA-Z-][0-9a-zA-Z-]*)(?:.(?:0|[1-9]d*|d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:.[0-9a-zA-Z-]+)*))?$',
+        ),
+      )
+      .required(),
+    RECOMMENDED_VERSION: Joi.string()
+      .regex(
+        new RegExp(
+          '^(0|[1-9]d*).(0|[1-9]d*).(0|[1-9]d*)(?:-((?:0|[1-9]d*|d*[a-zA-Z-][0-9a-zA-Z-]*)(?:.(?:0|[1-9]d*|d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:.[0-9a-zA-Z-]+)*))?$',
+        ),
+      )
+      .required(),
   }),
 });
 
@@ -68,10 +84,12 @@ const mikroORM = MikroOrmModule.forRootAsync({
       useClass: LoggingInterceptor,
     },
     LoggingService,
+    ...handles,
   ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(RequestContextMiddleware).forRoutes('*');
+    consumer.apply(VersionCheckMiddleware).forRoutes('*');
   }
 }

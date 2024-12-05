@@ -10,8 +10,8 @@ contributing to the project.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-private-repo/eleve-api.git
-   cd eleve-api
+   git clone git@github.com:tineverse/eleve-base.git
+   cd eleve-base
    ```
 
 2. Create the .env file:

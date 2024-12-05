@@ -1,3 +1,4 @@
+import { VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -13,6 +14,9 @@ async function bootstrap() {
 
   const logger = app.get(WINSTON_MODULE_NEST_PROVIDER);
   app.useGlobalFilters(new HttpExceptionFilter(logger));
+  app.enableVersioning({
+    type: VersioningType.URI,
+  });
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Élevé')
@@ -23,6 +27,12 @@ async function bootstrap() {
     .addGlobalParameters({
       name: 'x-correlation-id',
       description: 'Correlation identifier for related requests',
+      required: false,
+      in: 'header',
+    })
+    .addGlobalParameters({
+      name: 'x-client-version',
+      description: 'Client version',
       required: false,
       in: 'header',
     })

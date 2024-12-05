@@ -1,6 +1,6 @@
 # Swagger Documentation
 
-The Eleve API uses **Swagger** for interactive API documentation. Below are the key configurations and guidelines for maintaining the Swagger documentation.
+The API uses **Swagger** for interactive API documentation. Below are the key configurations and guidelines for maintaining the Swagger documentation.
 
 ## Base Configuration
 
@@ -29,6 +29,12 @@ in: 'header',
   - **Type**: `string`
   - **Required**: `false`
   - **Scope**: Request headers.
+
+- **x-app-version**
+  - **Description**: The client’s API version. Used to validate compatibility.
+  - **Type**: `string`
+  - **Required**: `false`
+  - **Format**: Semantic versioning (e.g., `1.0.0`).
 
 ## Customizing Swagger
 

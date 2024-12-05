@@ -5,7 +5,7 @@ API_NPX = $(DOCKER_API) npx
 API_BASH = $(DOCKER_API) /bin/bash
 
 # Add task to .PHONY
-.PHONY: help install add-dep add-dev-dep up start down stop build terminal run-npm run-npx test lint release
+.PHONY: help install add-dep add-dev-dep up start down stop build terminal run-npm run-npx test test-e2e lint release
 
 # HELP
 # This will output the help for each task
@@ -15,18 +15,18 @@ help: ## This help.
 .DEFAULT_GOAL := help
 
 ##@ 🚀 Getting started
-install: ## Install the dependences of the project
+install: up ## Install the dependences of the project
 	@echo "Installing Node dependencies"
 	@$(API_NPM) install
 
 ##@  🖥️  Development
 add-dep: up ## Add a new dependency (e.g., make add-dep dep=express)
 	@echo "Adding dependency $(dep)"
-	$(API_NPM) install $(dep)
+	@$(API_NPM) install $(dep)
 
 add-dev-dep: up ## Add a new dev dependency (e.g., make add-dev-dep dep=@types/express)
 	@echo "Adding dev dependency $(dep)"
-	$(API_NPM) install $(dep) --save-dev
+	@$(API_NPM) install $(dep) --save-dev
 
 up: ## Starts the dev serve
 	@$(DOCKER_COMPOSE) up -d --wait
@@ -34,33 +34,40 @@ up: ## Starts the dev serve
 start: up ## Alias for "up"
 
 down: ## Stops the dev serve
-	$(DOCKER_COMPOSE) down
+	@$(DOCKER_COMPOSE) down
 
 stop: down ## Alias for "down"
 
 build: ## Build the Docker images
-	$(DOCKER_COMPOSE) build
+	@$(DOCKER_COMPOSE) build
+
+logs-api: ## Build the Docker images
+	@$(DOCKER_COMPOSE) logs -f api
 
 terminal: up ## Open a terminal inside the container
-	$(API_BASH)
+	@$(API_BASH)
 
 run-npm: up ## Run an npm script inside the container (e.g., make run-npm cmd=start)
 	@echo "Running npm $(cmd)"
-	$(API_NPM) run $(cmd)
+	@$(API_NPM) run $(cmd)
 
 run-npx: up ## Run an npx command inside the container (e.g., make run-npx cmd=eslint src)
 	@echo "Running npx $(cmd)"
-	$(API_NPX) $(cmd)
+	@$(API_NPX) $(cmd)
 
 ##@  ✅  Tests
-test: up ## Run unit tests
+test: ## Run unit tests
 	@echo "Start running unit tests"
-	@$(API_NPM) test
+	@$(MAKE) run-npm cmd=test
 
-lint: up ## Run linting
+test-e2e: ## Run unit tests
+	@echo "Start running unit tests"
+	@$(MAKE) run-npm cmd=test:e2e
+
+lint: ## Run linting
 	@echo "Running lint checks"
-	@$(API_NPM) run lint
+	@$(MAKE) run-npm cmd=lint
 
 ##@ 🚀 Release
 release: up ## Run Semantic Release
-	@$(API_NPM) run release
+	@$(MAKE) run-npm cmd=release

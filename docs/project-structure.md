@@ -1,6 +1,6 @@
 # Project Structure
 
-The Eleve API follows a **Hexagonal Architecture** pattern, separating business logic, application logic, and infrastructure concerns. Below is the detailed structure of the project:
+The API follows a **Hexagonal Architecture** pattern, separating business logic, application logic, and infrastructure concerns. Below is the detailed structure of the project:
 
 ```plaintext
 src/

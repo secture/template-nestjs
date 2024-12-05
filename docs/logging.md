@@ -1,6 +1,6 @@
 # Logging System Guide
 
-The Eleve API's logging system is designed for observability, debugging, and integration with external systems.
+The API's logging system is designed for observability, debugging, and integration with external systems.
 
 ## Features
 

@@ -47,8 +47,8 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-private-repo/eleve-api.git
-   cd eleve-api
+   git clone git@github.com:tineverse/eleve-base.git
+   cd eleve-base
    ```
 
 2. Create the .env file:
@@ -115,6 +115,11 @@ The API documentation is available at:
   - **Type**: `string`
   - **Required**: `false`
   - **Scope**: Request headers
+
+#### Version Middleware
+
+The API includes a middleware to ensure client compatibility based on the API version.
+For more details, see the [Version Control Guide](docs/version-control.md).
 
 ### Healthcheck
 
@@ -194,7 +199,7 @@ Semantic Release manages versioning automatically:
 
 ## 🛠️ Logging System
 
-The Eleve API uses a structured logging system based on **Winston**. It provides:
+The API uses a structured logging system based on **Winston**. It provides:
 
 - **Console Logs**: Pretty logs for development with colorized output.
 - **File Logs**: Structured logs for error tracking and auditing.

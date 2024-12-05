@@ -41,4 +41,4 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"content": "Validation completed for PR #${{ github.event.pull_request.number }} with status: ${{ job.status }}"}' \
-          YOUR_DISCORD_WEBHOOK_URL
+          https://discord.com/api/webhooks/1310581555730710528/UTwhb2Fjj_zsI2Nvtma8xoDIVle75sbpxnSuithuQ1mV8-N6sblPVSIwDz-laLqGMjp_

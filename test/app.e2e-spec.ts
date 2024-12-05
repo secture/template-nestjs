@@ -21,4 +21,16 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/app-versions (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/app-versions')
+      .expect(200)
+      .expect((response) => {
+        expect(response.body).toEqual({
+          supportedVersion: '1.0.0',
+          recommendedVersion: '1.2.3',
+        });
+      });
+  });
 });
