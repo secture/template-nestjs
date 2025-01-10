@@ -71,3 +71,10 @@ lint: ## Run linting
 ##@ 🚀 Release
 release: up ## Run Semantic Release
 	@$(MAKE) run-npm cmd=release
+
+##@ 🗄️ Database
+migration-create: ## Generate migration file
+	@$(MAKE) run-npm cmd=migration:create
+
+migration-up: ## Run pending migrations
+	@$(MAKE) run-npm cmd=migration:up

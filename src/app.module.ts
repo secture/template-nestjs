@@ -1,13 +1,13 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
-import { PostgreSqlDriver } from '@mikro-orm/postgresql';
 import { HttpModule } from '@nestjs/axios';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { TerminusModule } from '@nestjs/terminus';
 import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
+import mikroOrmConfig from '../mikro-orm.config';
 import handles from './handles';
 import { winstonConfig } from './infrastructure/config/logging.config';
 import { LoggingInterceptor } from './infrastructure/interceptors/logging.interceptor';
@@ -52,21 +52,7 @@ const clsModule = ClsModule.forRoot({
   middleware: { mount: true },
 });
 
-const mikroORM = MikroOrmModule.forRootAsync({
-  inject: [ConfigService],
-  useFactory: (configService: ConfigService) => ({
-    autoLoadEntities: false,
-    entities: ['./dist/domain/entities'],
-    entitiesTs: ['./src/domain/entities'],
-    dbName: configService.get<string>('DATABASE_NAME'),
-    driver: PostgreSqlDriver,
-    user: configService.get<string>('DATABASE_USER'),
-    password: configService.get<string>('DATABASE_PASSWORD'),
-    host: configService.get<string>('DATABASE_HOST'),
-    port: configService.get<number>('DATABASE_PORT'),
-    debug: configService.get<string>('NODE_ENV') !== 'production',
-  }),
-});
+const mikroORM = MikroOrmModule.forRoot(mikroOrmConfig);
 
 @Module({
   imports: [

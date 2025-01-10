@@ -20,12 +20,17 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "commit": "cz",
     "prepare": "husky",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "migration:create": "mikro-orm migration:create",
+    "migration:up": "mikro-orm migration:up",
+    "migration:down": "mikro-orm migration:down"
   },
   "dependencies": {
     "@mikro-orm/core": "^6.4.0",
+    "@mikro-orm/migrations": "^6.4.0",
     "@mikro-orm/nestjs": "^6.0.2",
     "@mikro-orm/postgresql": "^6.4.0",
+    "@mikro-orm/seeder": "^6.4.2",
     "@nestjs/axios": "^3.1.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.3.0",
@@ -36,6 +41,8 @@
     "axios": "^1.7.8",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
     "joi": "^17.13.3",
     "nest-winston": "^1.9.7",
     "nestjs-cls": "^4.4.1",
@@ -48,6 +55,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@mikro-orm/cli": "^6.4.0",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.4.8",
