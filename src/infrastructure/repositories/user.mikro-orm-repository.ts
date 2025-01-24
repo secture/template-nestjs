@@ -1,17 +1,24 @@
+import { EntityManager } from '@mikro-orm/core';
+import { EntityRepository } from '@mikro-orm/postgresql';
 import { Injectable } from '@nestjs/common';
 import { User } from '../../domain/entities/user.entity';
 import { UserRepository } from '../../domain/repositories/user.repository';
 
 @Injectable()
 export class UserMikroOrmRepository implements UserRepository {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async save(user: User): Promise<void> {
-    // Implement the save logic here (e.g., MikroORM logic)
+  private readonly ormRepo: EntityRepository<User>;
+  constructor(em: EntityManager) {
+    this.ormRepo = em.getRepository(User);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async findById(id: string): Promise<User | null> {
-    // Implement the find logic here
-    return null;
+  async save(user: User): Promise<void> {
+    await this.ormRepo.upsert(user);
+  }
+
+  async findByEmail(email: string): Promise<User | null> {
+    return this.ormRepo.findOne({ email: email });
+  }
+  async findById(userId: string): Promise<User | null> {
+    return this.ormRepo.findOne({ id: userId });
   }
 }

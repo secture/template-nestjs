@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { GetAppVersionsHandler } from '../../application/get-app-versions/get-app-versions.handler';
-import { AppVersionsHttpDto } from '../dto/app-versions-http.dto';
+import { AppVersionsHttpResponse } from '../dto/response/app-versions.http-response';
 
 @ApiTags('Élevé')
 @Controller()
@@ -16,11 +16,11 @@ export class AppController {
   @ApiResponse({
     status: 200,
     description: 'Returns the supported and recommended app versions',
-    type: AppVersionsHttpDto,
+    type: AppVersionsHttpResponse,
   })
   @Get('app-versions')
-  getAppVersions(): AppVersionsHttpDto {
-    return AppVersionsHttpDto.fromApplicationDto(
+  getAppVersions(): AppVersionsHttpResponse {
+    return AppVersionsHttpResponse.fromApplicationDto(
       this.getAppVersionsHandler.handle(),
     );
   }

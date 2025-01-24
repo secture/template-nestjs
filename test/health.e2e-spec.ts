@@ -15,6 +15,10 @@ describe('HealthCheck (e2e)', () => {
     await app.init();
   });
 
+  afterAll(async () => {
+    await app.close();
+  });
+
   it('/health (GET)', () => {
     return request(app.getHttpServer())
       .get('/health')

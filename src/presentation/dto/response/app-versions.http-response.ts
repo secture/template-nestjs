@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { AppVersionsDto } from '../../application/get-app-versions/app-versions.dto';
+import { AppVersionsDto } from '../../../application/get-app-versions/app-versions.dto';
 
-export class AppVersionsHttpDto {
+export class AppVersionsHttpResponse {
   @ApiProperty({
     description: 'Supported app version',
     example: '1.0.0',
@@ -21,8 +21,8 @@ export class AppVersionsHttpDto {
 
   static fromApplicationDto(
     appVersionPort: AppVersionsDto,
-  ): AppVersionsHttpDto {
-    return new AppVersionsHttpDto(
+  ): AppVersionsHttpResponse {
+    return new AppVersionsHttpResponse(
       appVersionPort.supportedVersion,
       appVersionPort.recommendedVersion,
     );

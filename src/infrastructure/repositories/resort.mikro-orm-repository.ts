@@ -1,12 +1,14 @@
-import { EntityRepository } from '@mikro-orm/core';
+import { EntityManager, EntityRepository } from '@mikro-orm/core';
 import { Resort } from '../../domain/entities/resort.entity';
 import { ResortRepository } from '../../domain/repositories/resort.repository';
-import { Id } from '../../domain/value-objects/id.value-object';
 
 export class ResortMikroOrmRepository implements ResortRepository {
-  constructor(private readonly ormRepo: EntityRepository<Resort>) {}
+  private readonly ormRepo: EntityRepository<Resort>;
+  constructor(em: EntityManager) {
+    this.ormRepo = em.getRepository(Resort);
+  }
 
-  findById(id: Id): Promise<Resort | null> {
+  findById(id: string): Promise<Resort | null> {
     return this.ormRepo.findOne({ id });
   }
 
@@ -15,7 +17,7 @@ export class ResortMikroOrmRepository implements ResortRepository {
   }
 
   async save(resort: Resort): Promise<void> {
-    await this.ormRepo.getEntityManager().persistAndFlush(resort);
+    await this.ormRepo.upsert(resort);
   }
 
   async delete(resort: Resort): Promise<void> {

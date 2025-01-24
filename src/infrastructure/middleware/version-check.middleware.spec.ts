@@ -14,6 +14,10 @@ describe('VersionCheckMiddleware', () => {
     middleware = new VersionCheckMiddleware(mockConfigService as any);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('should allow if version is supported', () => {
     const req = { headers: { 'x-app-version': '1.1.0' } };
     const res = { setHeader: jest.fn() };

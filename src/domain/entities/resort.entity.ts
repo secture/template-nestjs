@@ -1,6 +1,5 @@
 import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
 import { Collection } from '../value-objects/collection.value-object';
-import { Id } from '../value-objects/id.value-object';
 import { ResortContact } from '../value-objects/resort-contact.value-object';
 import { ResortService } from '../value-objects/resort-service.value-object';
 import { ResortTechnicalData } from '../value-objects/resort-technical-data.value-object';
@@ -8,7 +7,7 @@ import { ResortTechnicalData } from '../value-objects/resort-technical-data.valu
 @Entity()
 export class Resort {
   @PrimaryKey({ type: 'uuid', fieldName: 'id' })
-  private readonly _id!: Id;
+  private readonly _id!: string;
 
   @Property({ type: 'Date', fieldName: 'created_at' })
   private readonly _createdAt!: Date;
@@ -42,7 +41,7 @@ export class Resort {
   private readonly _services!: Collection<ResortService>;
 
   constructor(
-    id: Id,
+    id: string,
     createdAt: Date,
     updatedAt: Date,
     name: string,
@@ -66,7 +65,7 @@ export class Resort {
   }
 
   static create(
-    id: Id,
+    id: string,
     name: string,
     logo: string,
     kilometersOfTracks: number,
@@ -97,7 +96,7 @@ export class Resort {
     );
   }
 
-  get id(): Id {
+  get id(): string {
     return this._id;
   }
 }

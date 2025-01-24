@@ -31,7 +31,7 @@ export class ResortSeeder extends Seeder {
 
       const webcams = resortData.webcams.map((webcamData: any) => {
         return Webcam.create(
-          Id.from(webcamData.id),
+          Id.from(webcamData.id).toString(),
           webcamData.name,
           webcamData.url,
           resort,
@@ -42,7 +42,7 @@ export class ResortSeeder extends Seeder {
 
       const news = resortData.news.map((newsData: any) => {
         return News.create(
-          Id.from(newsData.id),
+          Id.from(newsData.id).toString(),
           newsData.title,
           newsData.description,
           newsData.url,
@@ -54,7 +54,7 @@ export class ResortSeeder extends Seeder {
 
       const weatherData = resortData.weather;
       const weather = Weather.create(
-        Id.generate(),
+        Id.generate().toString(),
         resort,
         new Date(),
         weatherData.today.hourly.map((hourData: any) => {
@@ -81,7 +81,7 @@ export class ResortSeeder extends Seeder {
 
   private parseResort(resortData: any) {
     return Resort.create(
-      Id.from(resortData.id),
+      Id.from(resortData.id).toString(),
       resortData.name,
       resortData.logo,
       resortData.technicalData.kilometersOfTracks,

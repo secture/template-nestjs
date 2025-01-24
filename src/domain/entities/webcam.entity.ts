@@ -1,11 +1,10 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { Id } from '../value-objects/id.value-object';
 import { Resort } from './resort.entity';
 
 @Entity()
 export class Webcam {
   @PrimaryKey({ type: 'uuid', fieldName: 'id' })
-  private readonly _id!: Id;
+  private readonly _id!: string;
 
   @Property({ type: 'Date', fieldName: 'created_at' })
   private readonly _createdAt!: Date;
@@ -30,7 +29,7 @@ export class Webcam {
   private readonly _lastUpdated!: Date;
 
   private constructor(
-    id: Id,
+    id: string,
     createdAt: Date,
     updatedAt: Date,
     resort: Resort,
@@ -48,7 +47,7 @@ export class Webcam {
   }
 
   static create(
-    id: Id,
+    id: string,
     name: string,
     url: string,
     resort: Resort,
@@ -58,7 +57,7 @@ export class Webcam {
     return new Webcam(id, createdAt, createdAt, resort, name, url, lastUpdated);
   }
 
-  get id(): Id {
+  get id(): string {
     return this._id;
   }
 
