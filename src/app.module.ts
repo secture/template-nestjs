@@ -22,6 +22,7 @@ import { VersionCheckMiddleware } from './infrastructure/middleware/version-chec
 import { AppController } from './presentation/controllers/app.controller';
 import { AuthController } from './presentation/controllers/auth.controller';
 import { HealthController } from './presentation/controllers/health.controller';
+import { ResortController } from './presentation/controllers/resort.controller';
 import repositories from './repositories';
 
 const configModule = ConfigModule.forRoot({
@@ -86,7 +87,12 @@ const jwtModule = JwtModule.register({
     PassportModule,
     jwtModule,
   ],
-  controllers: [AppController, HealthController, AuthController],
+  controllers: [
+    AppController,
+    HealthController,
+    AuthController,
+    ResortController,
+  ],
   providers: [
     {
       provide: APP_INTERCEPTOR,

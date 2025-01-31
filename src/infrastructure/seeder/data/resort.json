@@ -114,6 +114,11 @@
                     "windSpeed": 12
                 }
             ]
-        }
+        },
+        "location": {
+            "latitude": 42.699567455455615,
+            "longitude": 0.9466303026011723
+        },
+        "country": "España"
     }
 ]

@@ -1,5 +1,4 @@
-import { EntityManager } from '@mikro-orm/core';
-import { EntityRepository } from '@mikro-orm/postgresql';
+import { EntityManager, EntityRepository } from '@mikro-orm/postgresql';
 import { Injectable } from '@nestjs/common';
 import { RefreshToken } from '../../domain/entities/refresh-token.entity';
 import { RefreshTokenRepository } from '../../domain/repositories/refresh-token.repository';

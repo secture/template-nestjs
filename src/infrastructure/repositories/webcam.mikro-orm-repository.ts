@@ -1,4 +1,4 @@
-import { EntityManager, EntityRepository } from '@mikro-orm/core';
+import { EntityManager, EntityRepository } from '@mikro-orm/postgresql';
 import { Webcam } from '../../domain/entities/webcam.entity';
 import { WebcamRepository } from '../../domain/repositories/webcam.repository';
 

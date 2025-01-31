@@ -9,8 +9,8 @@ import { RevokeRefreshTokenCommand } from '../../application/revoke-refresh-toke
 import { RevokeRefreshTokenHandler } from '../../application/revoke-refresh-token/revoke-refresh-token.handler';
 import { RefreshToken } from '../../domain/entities/refresh-token.entity';
 import { User } from '../../domain/entities/user.entity';
+import { RefreshTokenRequest } from '../dto/request/refresh-token.request';
 import { AuthHttpResponse } from '../dto/response/auth.http-response';
-import { RefreshTokenRequest } from '../dto/resuest/refresh-token.request';
 import { AuthController } from './auth.controller';
 
 describe('AuthController', () => {

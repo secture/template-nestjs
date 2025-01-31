@@ -5,4 +5,12 @@ export interface ResortRepository {
   findAll(): Promise<Resort[]>;
   save(resort: Resort): Promise<void>;
   delete(resort: Resort): Promise<void>;
+  findAllOrderedAlphabetically(): Promise<Resort[]>;
+  findAllByProximity(latitude: number, longitude: number): Promise<Resort[]>;
+  findBySearchTerm(search: string): Promise<Resort[]>;
+  findByProximityAndSearchTerm(
+    latitude: number,
+    longitude: number,
+    search: string,
+  ): Promise<Resort[]>;
 }

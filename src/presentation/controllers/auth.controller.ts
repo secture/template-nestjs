@@ -16,8 +16,8 @@ import { RefreshAccessTokenCommand } from '../../application/refresh-access-toke
 import { RefreshAccessTokenHandler } from '../../application/refresh-access-token/refresh-access-token.handler';
 import { RevokeRefreshTokenCommand } from '../../application/revoke-refresh-token/revoke-refresh-token.command';
 import { RevokeRefreshTokenHandler } from '../../application/revoke-refresh-token/revoke-refresh-token.handler';
+import { RefreshTokenRequest } from '../dto/request/refresh-token.request';
 import { AuthHttpResponse } from '../dto/response/auth.http-response';
-import { RefreshTokenRequest } from '../dto/resuest/refresh-token.request';
 
 @ApiTags('Authentication')
 @Controller('auth')

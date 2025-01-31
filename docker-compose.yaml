@@ -14,7 +14,7 @@ services:
       NODE_ENV: development
     command: ["npm", "run", "start:dev"]
   db:
-    image: postgres:17
+    image: postgis/postgis:17-3.5
     container_name: eleve_db
     restart: always
     ports:

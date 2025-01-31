@@ -1,4 +1,4 @@
-import { EntityManager, EntityRepository } from '@mikro-orm/core';
+import { EntityManager, EntityRepository } from '@mikro-orm/postgresql';
 import { Weather } from '../../domain/entities/weather.entity';
 import { WeatherRepository } from '../../domain/repositories/weather.repository';
 

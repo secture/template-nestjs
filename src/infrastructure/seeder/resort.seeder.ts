@@ -6,6 +6,7 @@ import { Resort } from '../../domain/entities/resort.entity';
 import { Weather } from '../../domain/entities/weather.entity';
 import { Webcam } from '../../domain/entities/webcam.entity';
 import { Collection } from '../../domain/value-objects/collection.value-object';
+import { GeoPoint } from '../../domain/value-objects/geo-point.value-object';
 import { HourlyWeather } from '../../domain/value-objects/hourly-weather.value-object';
 import { Id } from '../../domain/value-objects/id.value-object';
 import { ResortContact } from '../../domain/value-objects/resort-contact.value-object';
@@ -88,6 +89,8 @@ export class ResortSeeder extends Seeder {
       resortData.technicalData.numberOfLifts,
       resortData.technicalData.numberOfTracks,
       resortData.description,
+      GeoPoint.from(resortData.location),
+      resortData.country,
       resortData.images,
       Collection.create<ResortContact>(
         resortData.contacts.map((contactData: object) =>
