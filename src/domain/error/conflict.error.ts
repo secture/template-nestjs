@@ -1,7 +1,7 @@
 import { EleveError } from './eleve.error';
 
 export class ConflictError extends EleveError {
-  constructor(message = 'eleve.conflict') {
+  constructor(message = 'Conflict') {
     super(message, 'ConflictError');
   }
 }

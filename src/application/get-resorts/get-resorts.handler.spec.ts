@@ -1,5 +1,5 @@
 import { Resort } from '../../domain/entities/resort.entity';
-import { InvalidError } from '../../domain/error/Invalid.error';
+import { InvalidError } from '../../domain/error/invalid.error';
 import { ResortRepository } from '../../domain/repositories/resort.repository';
 import { GeoPoint } from '../../domain/value-objects/geo-point.value-object';
 import { GetResortsHandler } from './get-resorts.handler';

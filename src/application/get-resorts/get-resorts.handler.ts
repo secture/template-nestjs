@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ResortWithDistance } from '../../domain/aggregate/resort-with-distance.aggregate';
 import { Resort } from '../../domain/entities/resort.entity';
-import { InvalidError } from '../../domain/error/Invalid.error';
+import { InvalidError } from '../../domain/error/invalid.error';
 import { ResortRepository } from '../../domain/repositories/resort.repository';
 import { GetResortsQuery } from './get-resorts.query';
 

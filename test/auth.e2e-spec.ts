@@ -93,10 +93,7 @@ describe('AuthController (e2e)', () => {
         .send();
 
       expect(response.status).toBe(401);
-      expect(response.body.message).toStrictEqual({
-        message: 'Unauthorized',
-        statusCode: 401,
-      });
+      expect(response.body.message).toEqual('Unauthorized');
     });
   });
 

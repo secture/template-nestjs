@@ -1,9 +1,11 @@
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
+import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { AuthService } from '../src/domain/auth.service';
 import { User } from '../src/domain/entities/user.entity';
+import { HttpExceptionFilter } from '../src/infrastructure/filters/http-exception.filter';
 
 describe('ResortsController (e2e)', () => {
   let app: INestApplication;
@@ -16,6 +18,8 @@ describe('ResortsController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    const logger = app.get(WINSTON_MODULE_NEST_PROVIDER);
+    app.useGlobalFilters(new HttpExceptionFilter(logger));
     app.useGlobalPipes(
       new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }),
     );
@@ -125,6 +129,45 @@ describe('ResortsController (e2e)', () => {
         distance: null,
         logo: expect.any(String),
       });
+    });
+  });
+
+  describe('GET /resorts/:id/export', () => {
+    it('should return 401 if no access token is provided', async () => {
+      const response = await request(app.getHttpServer()).get(
+        '/resorts/1/export',
+      );
+
+      expect(response.status).toBe(401);
+      expect(response.body.message).toEqual('Unauthorized');
+    });
+
+    it('should return 404 if resort not exists', async () => {
+      const resortId = '944c9595-d881-436e-b89e-b14960c31e7a'; // unknown id;
+      const response = await request(app.getHttpServer())
+        .get(`/resorts/${resortId}/export`)
+        .set('Authorization', `Bearer ${validAccessToken}`);
+
+      expect(response.status).toBe(404);
+      expect(response.body.message).toMatch(/Resort not found/i);
+    });
+
+    it('should return 200 and resort database', async () => {
+      const resortId = '5f905dac-b03e-4932-a53e-f20f55661c3c'; // seeder resort id;
+      const response = await request(app.getHttpServer())
+        .get(`/resorts/${resortId}/export`)
+        .set('Authorization', `Bearer ${validAccessToken}`);
+
+      expect(response.status).toBe(200);
+
+      expect(response.header['content-type']).toContain(
+        'application/octet-stream',
+      );
+      expect(response.header['content-disposition']).toContain(
+        `resort_${resortId}.db`,
+      );
+
+      expect(response.body).toBeInstanceOf(Buffer);
     });
   });
 });

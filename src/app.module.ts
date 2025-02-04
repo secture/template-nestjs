@@ -10,7 +10,6 @@ import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
 import mikroOrmConfig from '../mikro-orm.config';
-import { AuthService } from './domain/auth.service';
 import handles from './handles';
 import { AppleStrategy } from './infrastructure/auth/apple.strategy';
 import { JwtStrategy } from './infrastructure/auth/jwt.strategy';
@@ -22,9 +21,10 @@ import { VersionCheckMiddleware } from './infrastructure/middleware/version-chec
 import { AppController } from './presentation/controllers/app.controller';
 import { AuthController } from './presentation/controllers/auth.controller';
 import { HealthController } from './presentation/controllers/health.controller';
+import { GetMeController } from './presentation/controllers/me.controller';
 import { ResortController } from './presentation/controllers/resort.controller';
 import repositories from './repositories';
-import { GetMeController } from './presentation/controllers/me.controller';
+import services from './services';
 
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
@@ -104,7 +104,7 @@ const jwtModule = JwtModule.register({
     AppleStrategy,
     JwtStrategy,
     ...repositories,
-    AuthService,
+    ...services,
     ...handles,
   ],
 })
