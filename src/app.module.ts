@@ -24,6 +24,7 @@ import { AuthController } from './presentation/controllers/auth.controller';
 import { HealthController } from './presentation/controllers/health.controller';
 import { ResortController } from './presentation/controllers/resort.controller';
 import repositories from './repositories';
+import { GetMeController } from './presentation/controllers/me.controller';
 
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
@@ -92,6 +93,7 @@ const jwtModule = JwtModule.register({
     HealthController,
     AuthController,
     ResortController,
+    GetMeController,
   ],
   providers: [
     {

@@ -28,6 +28,12 @@ export class User {
   @Property({ nullable: true })
   private readonly _appleId?: string;
 
+  @Property({ nullable: true, type: 'string', fieldName: 'phone' })
+  private _phone?: string;
+
+  @Property({ type: 'boolean', fieldName: 'phone_verified', default: false })
+  private readonly _phoneVerified: boolean;
+
   constructor(
     id: string,
     createdAt: Date,
@@ -35,6 +41,7 @@ export class User {
     name: string,
     surname: string,
     email: string,
+    phone?: string,
     appleId?: string,
   ) {
     this._id = id;
@@ -44,6 +51,8 @@ export class User {
     this._surname = surname;
     this._email = email;
     this._appleId = appleId;
+    this._phone = phone;
+    this._phoneVerified = false;
   }
 
   static create(name: string, surname: string, email: string): User {
@@ -62,14 +71,43 @@ export class User {
     const id = Id.generate().toString();
     const createdAt = new Date();
 
-    return new User(id, createdAt, createdAt, name, surname, email, appleId);
+    return new User(
+      id,
+      createdAt,
+      createdAt,
+      name,
+      surname,
+      email,
+      undefined,
+      appleId,
+    );
   }
 
   get id(): string {
     return this._id;
   }
 
+  get name(): string {
+    return this._name;
+  }
+
+  get surname(): string {
+    return this._surname;
+  }
+
   get email(): string {
     return this._email;
+  }
+
+  get phone(): string | undefined {
+    return this._phone;
+  }
+
+  set phone(phoneNumber: string) {
+    this._phone = phoneNumber;
+  }
+
+  get phoneVerified(): boolean {
+    return this._phoneVerified;
   }
 }
