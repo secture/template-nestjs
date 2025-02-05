@@ -1,15 +1,15 @@
-import { ResortEntityExporter } from '../../domain/exporters/resort-entity.exporter';
+import { ResortExporter } from '../../domain/exporters/resort.exporter';
 import { ExportResortHandler } from './export-resort.handler';
 import { ExportResortQuery } from './export-resort.query';
 
 describe('ExportResortHandler', () => {
   let handler: ExportResortHandler;
-  let mockExporter: jest.Mocked<ResortEntityExporter>;
+  let mockExporter: jest.Mocked<ResortExporter>;
 
   beforeEach(() => {
     mockExporter = {
       export: jest.fn(),
-    } as unknown as jest.Mocked<ResortEntityExporter>;
+    } as unknown as jest.Mocked<ResortExporter>;
 
     handler = new ExportResortHandler(mockExporter);
   });

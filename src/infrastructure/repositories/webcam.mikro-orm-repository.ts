@@ -1,7 +1,9 @@
 import { EntityManager, EntityRepository } from '@mikro-orm/postgresql';
+import { Injectable } from '@nestjs/common';
 import { Webcam } from '../../domain/entities/webcam.entity';
 import { WebcamRepository } from '../../domain/repositories/webcam.repository';
 
+@Injectable()
 export class WebcamMikroOrmRepository implements WebcamRepository {
   private readonly ormRepo: EntityRepository<Webcam>;
   constructor(em: EntityManager) {
@@ -13,7 +15,8 @@ export class WebcamMikroOrmRepository implements WebcamRepository {
   }
 
   findByResort(resortId: string): Promise<Webcam[]> {
-    return this.ormRepo.find({ resort: { id: resortId } });
+    // @ts-expect-error "_resort" is used here for specific database compatibility for ordering.
+    return this.ormRepo.find({ _resort: { id: resortId } });
   }
 
   async save(webcam: Webcam): Promise<void> {

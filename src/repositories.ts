@@ -3,6 +3,7 @@ import { UserRepository } from './domain/repositories/user.repository';
 import { RefreshTokenMikroOrmRepository } from './infrastructure/repositories/refresh-token.mikro-orm-repository';
 import { ResortMikroOrmRepository } from './infrastructure/repositories/resort.mikro-orm-repository';
 import { UserMikroOrmRepository } from './infrastructure/repositories/user.mikro-orm-repository';
+import { WebcamMikroOrmRepository } from './infrastructure/repositories/webcam.mikro-orm-repository';
 
 const userRepository: ClassProvider<UserRepository> = {
   provide: 'UserRepository',
@@ -19,4 +20,14 @@ const resortRepository: ClassProvider<ResortMikroOrmRepository> = {
   useClass: ResortMikroOrmRepository,
 };
 
-export default [userRepository, refreshTokenRepository, resortRepository];
+const webcamRepository: ClassProvider<WebcamMikroOrmRepository> = {
+  provide: 'WebcamRepository',
+  useClass: WebcamMikroOrmRepository,
+};
+
+export default [
+  userRepository,
+  refreshTokenRepository,
+  resortRepository,
+  webcamRepository,
+];

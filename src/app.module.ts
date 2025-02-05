@@ -10,6 +10,7 @@ import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
 import mikroOrmConfig from '../mikro-orm.config';
+import controllers from './controllers';
 import handles from './handles';
 import { AppleStrategy } from './infrastructure/auth/apple.strategy';
 import { JwtStrategy } from './infrastructure/auth/jwt.strategy';
@@ -18,11 +19,6 @@ import { LoggingInterceptor } from './infrastructure/interceptors/logging.interc
 import { LoggingService } from './infrastructure/logging/logging.service';
 import { RequestContextMiddleware } from './infrastructure/middleware/request-context.middleware';
 import { VersionCheckMiddleware } from './infrastructure/middleware/version-check.middleware';
-import { AppController } from './presentation/controllers/app.controller';
-import { AuthController } from './presentation/controllers/auth.controller';
-import { HealthController } from './presentation/controllers/health.controller';
-import { GetMeController } from './presentation/controllers/me.controller';
-import { ResortController } from './presentation/controllers/resort.controller';
 import repositories from './repositories';
 import services from './services';
 
@@ -88,13 +84,7 @@ const jwtModule = JwtModule.register({
     PassportModule,
     jwtModule,
   ],
-  controllers: [
-    AppController,
-    HealthController,
-    AuthController,
-    ResortController,
-    GetMeController,
-  ],
+  controllers: controllers,
   providers: [
     {
       provide: APP_INTERCEPTOR,

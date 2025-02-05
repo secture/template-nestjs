@@ -1,3 +1,3 @@
-export interface ResortEntityExporter {
+export interface ResortExporter {
   export(resortId: string): Promise<string>;
 }

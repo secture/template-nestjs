@@ -1,7 +1,9 @@
 import { EntityManager, EntityRepository } from '@mikro-orm/postgresql';
+import { Injectable } from '@nestjs/common';
 import { News } from '../../domain/entities/news.entity';
 import { NewsRepository } from '../../domain/repositories/news.repository';
 
+@Injectable()
 export class NewsMikroOrmRepository implements NewsRepository {
   private readonly ormRepo: EntityRepository<News>;
   constructor(em: EntityManager) {
