@@ -7,6 +7,7 @@ import { GetMeHandler } from './application/get-me-user/get-me-user.handler';
 import { GetResortsHandler } from './application/get-resorts/get-resorts.handler';
 import { RefreshAccessTokenHandler } from './application/refresh-access-token/refresh-access-token.handler';
 import { RevokeRefreshTokenHandler } from './application/revoke-refresh-token/revoke-refresh-token.handler';
+import { GetWebcamsHandler } from './application/get-webcams/get-webcambs.handler';
 
 const getAppVersionsHandler: FactoryProvider = {
   provide: GetAppVersionsHandler,
@@ -27,4 +28,5 @@ export default [
   GetResortsHandler,
   ExportResortHandler,
   GetMeHandler,
+  GetWebcamsHandler,
 ];

@@ -5,6 +5,7 @@ import { HealthController } from './presentation/controllers/health.controller';
 import { GetMeController } from './presentation/controllers/me.controller';
 import { ResortController } from './presentation/controllers/resort.controller';
 import { TestController } from './presentation/controllers/test.controller';
+import { GetWebcamsController } from './presentation/controllers/webcam.controller';
 
 const controllers: any[] = [
   AppController,
@@ -12,6 +13,7 @@ const controllers: any[] = [
   AuthController,
   ResortController,
   GetMeController,
+  GetWebcamsController,
 ];
 
 if ('development' === process.env.NODE_ENV) {
