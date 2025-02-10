@@ -32,6 +32,9 @@ export class News {
   @Property({ type: 'Date', fieldName: 'date' })
   private readonly _date!: Date;
 
+  @Property({ type: 'string', fieldName: 'image' })
+  private readonly _image!: string;
+
   private constructor(
     id: string,
     createdAt: Date,
@@ -41,6 +44,7 @@ export class News {
     description: string,
     url: string,
     date: Date,
+    image: string,
   ) {
     this._id = id;
     this._createdAt = createdAt;
@@ -50,6 +54,7 @@ export class News {
     this._description = description;
     this._url = url;
     this._date = date;
+    this._image = image;
   }
 
   static create(
@@ -59,6 +64,7 @@ export class News {
     url: string,
     date: Date,
     resort: Resort,
+    image: string,
   ): News {
     const createdAt = new Date();
     return new News(
@@ -70,6 +76,7 @@ export class News {
       description,
       url,
       date,
+      image,
     );
   }
 
@@ -79,5 +86,25 @@ export class News {
 
   get resort(): Resort {
     return this._resort;
+  }
+
+  get title(): string {
+    return this._title;
+  }
+
+  get description(): string {
+    return this._description;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
+  get date(): Date {
+    return this._date;
+  }
+
+  get image(): string {
+    return this._image;
   }
 }
