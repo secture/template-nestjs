@@ -139,4 +139,8 @@ export class Resort {
   get description(): string {
     return this._description;
   }
+
+  get technicalData(): ResortTechnicalData {
+    return this._technicalData;
+  }
 }
