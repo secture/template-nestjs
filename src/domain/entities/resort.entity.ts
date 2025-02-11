@@ -131,4 +131,12 @@ export class Resort {
   get country(): string {
     return this._country;
   }
+
+  get contacts(): Collection<ResortContact> {
+    return this._contacts;
+  }
+
+  get description(): string {
+    return this._description;
+  }
 }

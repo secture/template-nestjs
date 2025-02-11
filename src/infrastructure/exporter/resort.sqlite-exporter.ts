@@ -31,6 +31,8 @@ export class ResortSQLiteExporter implements ResortExporter {
         table.string('logo');
         table.string('country');
         table.string('location');
+        table.string('contacts');
+        table.string('description');
       });
     }
 
@@ -41,6 +43,8 @@ export class ResortSQLiteExporter implements ResortExporter {
         logo: resort.logo,
         country: resort.country,
         location: resort.location.toJSON(),
+        contacts: resort.contacts.toJSON(),
+        description: resort.description,
       })
       .onConflict('id')
       .merge();
