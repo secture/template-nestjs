@@ -9,6 +9,9 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    
+    env:
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout code
@@ -17,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -41,4 +44,5 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"content": "Validation completed for PR #${{ github.event.pull_request.number }} with status: ${{ job.status }}"}' \
-          https://discord.com/api/webhooks/1310581555730710528/UTwhb2Fjj_zsI2Nvtma8xoDIVle75sbpxnSuithuQ1mV8-N6sblPVSIwDz-laLqGMjp_
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+

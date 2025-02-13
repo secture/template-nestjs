@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    
+    env:
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout code

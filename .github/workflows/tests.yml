@@ -9,6 +9,9 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    
+    env:
+      NODE_VERSION: '22'
 
     steps:
       - name: Checkout code
@@ -17,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -38,4 +41,4 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"content": "Tests run completed for branch main with status: ${{ job.status }}"}' \
-          YOUR_DISCORD_WEBHOOK_URL
+          ${{ secrets.DISCORD_WEBHOOK_URL }}

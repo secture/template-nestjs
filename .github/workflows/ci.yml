@@ -1,0 +1,159 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  lint-and-test:
+    name: Lint and test
+    runs-on: ubuntu-latest
+    
+    env:
+      NODE_VERSION: '22'
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache NPM
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test
+
+  build-and-push-image:
+    name: Build image and push to Github Container Registry
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    
+    env:
+      IMAGE_NAME_PREFIX: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /var/lib/docker
+          key: ${{ runner.os }}-docker-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-docker-
+
+      - name: Sanitize branch name and set full IMAGE_NAME
+        id: sanitize
+        run: |
+          echo "Sanitizing branch name..."
+          SANITIZED_TAG=$(echo "${GITHUB_REF_NAME}" | sed 's/[^a-zA-Z0-9._-]/-/g')
+          echo "SANITIZED_TAG=$SANITIZED_TAG" >> $GITHUB_ENV
+          IMAGE_NAME=${{ env.IMAGE_NAME_PREFIX }}:$SANITIZED_TAG
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+
+      - name: Log in to container registry
+        if: success()
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build Docker image
+        if: success()
+        run: |
+          docker build -t $IMAGE_NAME .
+          docker tag $IMAGE_NAME ${{ env.IMAGE_NAME_PREFIX }}:latest
+
+      - name: Push Image
+        if: success()
+        run: |
+          docker push $IMAGE_NAME
+          docker push ${{ env.IMAGE_NAME_PREFIX }}:latest
+  
+  deploy-staging:
+    name: Deploy staging
+    needs: build-and-push-image
+    runs-on: ubuntu-latest
+    
+    env:
+      IMAGE_NAME_PREFIX: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}
+      SSH_USER: ${{ vars.SSH_USER_STAGING }}
+      SSH_HOST: ${{ vars.SSH_HOST_STAGING }}
+      
+    steps:
+      - name: Sanitize branch name and set full IMAGE_NAME
+        id: sanitize
+        run: |
+          echo "Sanitizing branch name..."
+          SANITIZED_TAG=$(echo "${GITHUB_REF_NAME}" | sed 's/[^a-zA-Z0-9._-]/-/g')
+          echo "SANITIZED_TAG=$SANITIZED_TAG" >> $GITHUB_ENV
+          IMAGE_NAME=${{ env.IMAGE_NAME_PREFIX }}:$SANITIZED_TAG
+          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+          
+      - name: Deploy to Staging Server
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ env.SSH_HOST }}
+          username: ${{ env.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY_STAGING }}
+          script: |
+            echo "Logging in to GHCR"
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            echo "Downloading the new image ${{ env.IMAGE_NAME }}"
+            docker pull ${{ env.IMAGE_NAME }}
+            
+            echo "Restart containers"
+            cd /srv/www/eleve/eleve-base
+            docker compose -f docker-compose.staging.yml down
+            docker compose -f docker-compose.staging.yml up -d
+            
+            docker compose -f docker-compose.staging.yml run --rm api npm run migration:up
+            
+            for i in {1..5}; do
+              sleep 5
+              if curl -f http://localhost:3000/health; then
+                echo "Healthcheck OK"
+                exit 0
+              fi
+              echo "Retrying healthcheck..."
+            done
+            echo "Failed healthcheck!"
+            exit 1
+        
+      - name: Notify Discord
+        if: success()
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content":"Staging deploy successful for commit: '${{ github.sha }}'"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Notify Discord (failure)
+        if: failure()
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content":"Staging deploy FAILED for commit: '${{ github.sha }}'"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}

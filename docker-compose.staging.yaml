@@ -1,0 +1,20 @@
+services:
+  api:
+    image: ghcr.io/secture/tineverse/eleve-base:main
+    container_name: eleve_api
+    environment:
+      NODE_ENV: production
+    volumes:
+      - .env:/app/.env
+    ports:
+      - "${PORT:-3000}:3000"
+  db:
+    image: postgis/postgis:17-3.5
+    container_name: eleve_db
+    restart: always
+    volumes:
+      - ./etc/db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}

@@ -78,3 +78,14 @@ migration-create: ## Generate migration file
 
 migration-up: ## Run pending migrations
 	@$(MAKE) run-npm cmd=migration:up
+
+seeders-run:
+	@$(MAKE) run-npx cmd=mikro-orm seeder:run --class ResortSeeder
+
+publish:
+	#@docker build --push -t ghcr.io/secture/tineverse/eleve-base:main .
+	@docker buildx build --platform linux/arm64,linux/amd64 --push -t ghcr.io/secture/tineverse/eleve-base:main .
+
+deploy-staging:
+	@docker pull ghcr.io/secture/tineverse/eleve-base:main
+	@docker compose -f docker-compose.staging.yaml up -d
