@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Rabadá BIS",
+    "difficulty": "novice",
+    "location": {
+      "latitude": 42.698253,
+      "longitude": 0.9493631
+    },
+    "length": 1600,
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "open"
+  },
+  {
+    "name": "AUDI Ski chrono",
+    "difficulty": "easy",
+    "location": {
+      "latitude":  42.7184714,
+      "longitude": 0.9710397
+    }, 
+    "length": 1800,
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "close"
+  },
+  {
+    "name": "Dera Cascada",
+    "difficulty": "easy",
+    "location": {
+      "latitude": 42.7050537,
+      "longitude": 0.9548513
+    },
+    "length": 2000,
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "open"
+  },
+  {
+    "name": "Baqueira",
+    "difficulty": "intermediate",
+    "location": {
+      "latitude": 42.6967865,
+      "longitude": 0.9464637
+    },
+    "length": 2500,
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "open"
+  },
+  {
+    "name": "Tubo Nere",
+    "difficulty": "advanced",
+    "location": {
+      "latitude": 42.6951338,
+      "longitude": 0.9663048
+    },
+    "length": 2800,
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "open"
+  }
+]

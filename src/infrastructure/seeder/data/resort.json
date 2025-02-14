@@ -64,7 +64,8 @@
                 "title": "Resultados Maratón TV3",
                 "description": "Previsión de 100 km de pistas abiertas para este fin de semana.",
                 "url": "https://example.org/news1",
-                "date": "2024-12-01"
+                "date": "2024-12-01",
+                "image": "https://example.com/image.jpg"
             },
             {
                 "id": "da900f41-322f-4905-be9d-94793d0ab64a",

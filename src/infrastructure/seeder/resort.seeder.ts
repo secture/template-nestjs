@@ -12,6 +12,7 @@ import { Id } from '../../domain/value-objects/id.value-object';
 import { ResortContact } from '../../domain/value-objects/resort-contact.value-object';
 import { ResortService } from '../../domain/value-objects/resort-service.value-object';
 import { WeeklyWeather } from '../../domain/value-objects/weekly-weather.value-object';
+import { SlopeSeeder } from './slope.seeder';
 import { POISeeder } from './POI.seeder';
 
 export class ResortSeeder extends Seeder {
@@ -50,6 +51,7 @@ export class ResortSeeder extends Seeder {
           newsData.url,
           dayjs(newsData.date).toDate(),
           resort,
+          newsData.image,
         );
       });
       em.persist(news);
@@ -77,6 +79,7 @@ export class ResortSeeder extends Seeder {
       );
       em.persist(weather);
 
+      await new SlopeSeeder().run(em);
       await new POISeeder().run(em);
 
       await em.flush();
