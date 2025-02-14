@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Punto de Información",
+    "type": "INFORMATION",
+    "location": { "latitude": 42.7289477, "longitude": 0.9662188 },
+    "description": "Punto de información para senderistas.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Aseos Orri",
+    "type": "RESTROOMS",
+    "location": { "latitude": 42.7058114, "longitude": 0.9588656 },
+    "description": "Aseos públicos operados por Aseos Orri.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Cafetería 2200",
+    "type": "RESTAURANTS",
+    "location": { "latitude": 42.6930828, "longitude": 0.9579537 },
+    "description": "Cafetería con acceso a internet y asientos al aire libre.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Cafetería Argulls",
+    "type": "RESTAURANTS",
+    "location": { "latitude": 42.6835515, "longitude": 0.9658628 },
+    "description": "Cafetería con asientos al aire libre.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Aseos Públicos",
+    "type": "RESTROOMS",
+    "location": { "latitude": 42.6993029, "longitude": 0.9458112 },
+    "description": "Aseos públicos disponibles para los visitantes.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Restaurante Cinco Jotas",
+    "type": "RESTAURANTS",
+    "location": { "latitude":  42.6971982, "longitude": 0.945779 },
+    "description": "Restaurante con aseos disponibles.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Bar 1800",
+    "type": "RESTAURANTS",
+    "location": { "latitude":  42.6972731, "longitude": 0.9453713 },
+    "description": "Restaurante con acceso a internet y asientos al aire libre.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Taquilla Ruda Baqueira/Beret",
+    "type": "SHOPS",
+    "location": { "latitude":  42.696597, "longitude": 0.9353549 },
+    "description": "Venta de forfait Estación de ski Baqueira Beret.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Taquillas Tanau 1700 Baqueira/Beret",
+    "type": "SHOPS",
+    "location": { "latitude":  42.7030431, "longitude": 0.9387993 },
+    "description": "Venta de forfait Estación de ski Baqueira Beret.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  },
+  {
+    "name": "Punto de Información",
+    "type": "INFORMATION",
+    "location": { "latitude":  42.7289477, "longitude": 0.9662188 },
+    "description": "Punto de información para senderistas con señalización.",
+    "resortId": "5f905dac-b03e-4932-a53e-f20f55661c3c"
+  }
+]

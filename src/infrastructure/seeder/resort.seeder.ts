@@ -12,6 +12,7 @@ import { Id } from '../../domain/value-objects/id.value-object';
 import { ResortContact } from '../../domain/value-objects/resort-contact.value-object';
 import { ResortService } from '../../domain/value-objects/resort-service.value-object';
 import { WeeklyWeather } from '../../domain/value-objects/weekly-weather.value-object';
+import { POISeeder } from './POI.seeder';
 
 export class ResortSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -75,6 +76,8 @@ export class ResortSeeder extends Seeder {
         }),
       );
       em.persist(weather);
+
+      await new POISeeder().run(em);
 
       await em.flush();
     }
