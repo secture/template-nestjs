@@ -3,6 +3,8 @@ import { GeoPointType } from '../../infrastructure/types/geo-point.type';
 import { GeoPoint } from '../value-objects/geo-point.value-object';
 import { Resort } from './resort.entity';
 import { POIType } from '../enum/poi-type.enum';
+import { GeoPolygonType } from '../../infrastructure/types/geo-polygon.type';
+import { GeoPolygon } from '../value-objects/geo-polygon.value-object';
 
 @Entity()
 export class POI {
@@ -34,6 +36,9 @@ export class POI {
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
+  @Property({ type: GeoPolygonType, fieldName: 'area', nullable: true })
+  private readonly _area?: GeoPolygon;
+
   private constructor(
     id: string,
     createdAt: Date,
@@ -43,6 +48,7 @@ export class POI {
     location: GeoPoint,
     description: string,
     resort: Resort,
+    area?: GeoPolygon,
   ) {
     this._id = id;
     this._createdAt = createdAt;
@@ -52,6 +58,7 @@ export class POI {
     this._location = location;
     this._description = description;
     this._resort = resort;
+    this._area = area;
   }
 
   static create(
@@ -61,6 +68,7 @@ export class POI {
     location: GeoPoint,
     description: string,
     resort: Resort,
+    area?: GeoPolygon,
   ): POI {
     const createdAt = new Date();
 
@@ -73,6 +81,7 @@ export class POI {
       location,
       description,
       resort,
+      area,
     );
   }
 
@@ -98,5 +107,9 @@ export class POI {
 
   get resort(): Resort {
     return this._resort;
+  }
+
+  get area(): GeoPolygon | undefined {
+    return this._area;
   }
 }

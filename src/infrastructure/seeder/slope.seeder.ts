@@ -2,9 +2,9 @@ import type { EntityManager } from '@mikro-orm/core';
 import { Resort } from '../../domain/entities/resort.entity';
 import { Slope } from '../../domain/entities/slope.entity';
 import { SlopeDifficulty, SlopeStatus } from '../../domain/enum/slope.enum';
-import { GeoPoint } from '../../domain/value-objects/geo-point.value-object';
 import { Id } from '../../domain/value-objects/id.value-object';
 import { Seeder } from '@mikro-orm/seeder';
+import { GeoPath } from '../../domain/value-objects/geo-path.value-object';
 
 export class SlopeSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -31,10 +31,10 @@ export class SlopeSeeder extends Seeder {
         SlopeDifficulty[
           slopeData.difficulty.toUpperCase() as keyof typeof SlopeDifficulty
         ],
-        GeoPoint.from(slopeData.location),
         slopeData.length,
         resort,
         SlopeStatus[slopeData.status.toUpperCase() as keyof typeof SlopeStatus],
+        GeoPath.from(slopeData.path.points),
       );
 
       em.persist(slope);

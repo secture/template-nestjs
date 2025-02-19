@@ -14,6 +14,7 @@ import { ResortService } from '../../domain/value-objects/resort-service.value-o
 import { WeeklyWeather } from '../../domain/value-objects/weekly-weather.value-object';
 import { SlopeSeeder } from './slope.seeder';
 import { POISeeder } from './POI.seeder';
+import { LiftSeeder } from './lift.seeder';
 
 export class ResortSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -81,6 +82,7 @@ export class ResortSeeder extends Seeder {
 
       await new SlopeSeeder().run(em);
       await new POISeeder().run(em);
+      await new LiftSeeder().run(em);
 
       await em.flush();
     }

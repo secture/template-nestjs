@@ -1,11 +1,11 @@
 import { Entity, Enum, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { SlopeDifficulty, SlopeStatus } from '../enum/slope.enum';
+import { LiftStatus, LiftType } from '../enum/lift.enum';
 import { Resort } from './resort.entity';
-import { GeoPath } from '../value-objects/geo-path.value-object';
 import { GeoPathType } from '../../infrastructure/types/geo-path.type';
+import { GeoPath } from '../value-objects/geo-path.value-object';
 
 @Entity()
-export class Slope {
+export class Lift {
   @PrimaryKey({ type: 'uuid', fieldName: 'id' })
   private readonly _id!: string;
 
@@ -17,43 +17,43 @@ export class Slope {
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
-  private _updatedAt!: Date;
+  private _updatedAt: Date;
 
   @Property({ type: 'string', fieldName: 'name' })
   private readonly _name!: string;
 
-  @Enum({ items: () => SlopeDifficulty, fieldName: 'difficulty' })
-  private readonly _difficulty!: SlopeDifficulty;
+  @Enum({ items: () => LiftType, fieldName: 'type' })
+  private readonly _type!: LiftType;
 
-  @Property({ type: 'decimal', fieldName: 'length' })
-  private readonly _length!: number;
+  @Property({ type: 'integer', fieldName: 'capacity' })
+  private readonly _capacity!: number;
 
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Enum({ items: () => SlopeStatus, fieldName: 'status' })
-  private readonly _status!: SlopeStatus;
+  @Enum({ items: () => LiftStatus, fieldName: 'status' })
+  private readonly _status!: LiftStatus;
 
   @Property({ type: GeoPathType, fieldName: 'path' })
-  private readonly _path!: GeoPath;
+  private readonly _path: GeoPath;
 
-  constructor(
+  private constructor(
     id: string,
     createdAt: Date,
     updatedAt: Date,
     name: string,
-    difficulty: SlopeDifficulty,
-    length: number,
+    type: LiftType,
+    capacity: number,
     resort: Resort,
-    status: SlopeStatus,
+    status: LiftStatus,
     path: GeoPath,
   ) {
     this._id = id;
     this._createdAt = createdAt;
     this._updatedAt = updatedAt;
     this._name = name;
-    this._difficulty = difficulty;
-    this._length = length;
+    this._type = type;
+    this._capacity = capacity;
     this._resort = resort;
     this._status = status;
     this._path = path;
@@ -62,21 +62,21 @@ export class Slope {
   static create(
     id: string,
     name: string,
-    difficulty: SlopeDifficulty,
-    length: number,
+    type: LiftType,
+    capacity: number,
     resort: Resort,
-    status: SlopeStatus,
+    status: LiftStatus,
     path: GeoPath,
-  ): Slope {
-    const createdAt = new Date();
+  ): Lift {
+    const createAt = new Date();
 
-    return new Slope(
+    return new Lift(
       id,
-      createdAt,
-      createdAt,
+      createAt,
+      createAt,
       name,
-      difficulty,
-      length,
+      type,
+      capacity,
       resort,
       status,
       path,
@@ -91,19 +91,19 @@ export class Slope {
     return this._name;
   }
 
-  get difficulty(): SlopeDifficulty {
-    return this._difficulty;
+  get type(): LiftType {
+    return this._type;
   }
 
-  get length(): number {
-    return this._length;
+  get capacity(): number {
+    return this._capacity;
   }
 
   get resort(): Resort {
     return this._resort;
   }
 
-  get status(): SlopeStatus {
+  get status(): LiftStatus {
     return this._status;
   }
 

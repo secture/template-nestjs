@@ -72,7 +72,8 @@
                 "title": "Unete como voluntario al equipo MTB Baqueira Beret 2024!",
                 "description": "Forma parte de los eventos más importantes del año.",
                 "url": "https://example.org/news2",
-                "date": "2024-11-30"
+                "date": "2024-11-30",
+                "image": "https://example.com/image.jpg"
             }
         ],
         "weather": {

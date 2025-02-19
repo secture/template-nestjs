@@ -1,0 +1,1607 @@
+[
+  {
+    "name": "TSD Bonaigua",
+    "type": "CHAIRLIFT",
+    "capacity": 2400,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6654765,
+          "longitude": 0.9765534
+      },
+      {
+          "latitude": 42.6657375,
+          "longitude": 0.9766974
+      },
+      {
+          "latitude": 42.666032,
+          "longitude": 0.9768599
+      },
+      {
+          "latitude": 42.667106,
+          "longitude": 0.9774524
+      },
+      {
+          "latitude": 42.6674248,
+          "longitude": 0.9776284
+      },
+      {
+          "latitude": 42.6686231,
+          "longitude": 0.9782895
+      },
+      {
+          "latitude": 42.6696203,
+          "longitude": 0.9788397
+      },
+      {
+          "latitude": 42.6702217,
+          "longitude": 0.9791716
+      },
+      {
+          "latitude": 42.6710218,
+          "longitude": 0.979613
+      },
+      {
+          "latitude": 42.6724293,
+          "longitude": 0.9803897
+      },
+      {
+          "latitude": 42.6737221,
+          "longitude": 0.9811031
+      },
+      {
+          "latitude": 42.6738599,
+          "longitude": 0.9811791
+      },
+      {
+          "latitude": 42.6750307,
+          "longitude": 0.9818252
+      },
+      {
+          "latitude": 42.675317,
+          "longitude": 0.9819831
+      },
+      {
+          "latitude": 42.6761796,
+          "longitude": 0.9824591
+      },
+      {
+          "latitude": 42.6769567,
+          "longitude": 0.982888
+      },
+      {
+          "latitude": 42.6772563,
+          "longitude": 0.9830533
+      }
+  ]}
+  },
+  {
+    "name": "TS Teso dera Mina",
+    "type": "CHAIRLIFT",
+    "capacity": 1800,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6829185,
+          "longitude": 0.9614663
+      },
+      {
+          "latitude": 42.6828588,
+          "longitude": 0.9616408
+      },
+      {
+          "latitude": 42.6826267,
+          "longitude": 0.9623197
+      },
+      {
+          "latitude": 42.6821837,
+          "longitude": 0.9636152
+      },
+      {
+          "latitude": 42.6820589,
+          "longitude": 0.9639801
+      },
+      {
+          "latitude": 42.68167,
+          "longitude": 0.9651174
+      },
+      {
+          "latitude": 42.6810867,
+          "longitude": 0.9668232
+      },
+      {
+          "latitude": 42.6808466,
+          "longitude": 0.9675254
+      },
+      {
+          "latitude": 42.6805061,
+          "longitude": 0.9685211
+      },
+      {
+          "latitude": 42.6802363,
+          "longitude": 0.9693103
+      },
+      {
+          "latitude": 42.6797994,
+          "longitude": 0.9705879
+      },
+      {
+          "latitude": 42.6794104,
+          "longitude": 0.9717254
+      },
+      {
+          "latitude": 42.6791066,
+          "longitude": 0.9726138
+      },
+      {
+          "latitude": 42.6788244,
+          "longitude": 0.973439
+      },
+      {
+          "latitude": 42.6783475,
+          "longitude": 0.9748336
+      },
+      {
+          "latitude": 42.677922,
+          "longitude": 0.9760777
+      },
+      {
+          "latitude": 42.6778911,
+          "longitude": 0.9761682
+      },
+      {
+          "latitude": 42.677665,
+          "longitude": 0.9768293
+      },
+      {
+          "latitude": 42.6772821,
+          "longitude": 0.977949
+      },
+      {
+          "latitude": 42.6772415,
+          "longitude": 0.9780678
+      },
+      {
+          "latitude": 42.6771688,
+          "longitude": 0.9782804
+      }
+  ]}
+  },
+  {
+    "name": "TS Argulls",
+    "type": "CHAIRLIFT",
+    "capacity": 1800,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6833175,
+          "longitude": 0.9663119
+      },
+      {
+          "latitude": 42.6831216,
+          "longitude": 0.9668661
+      },
+      {
+          "latitude": 42.6830064,
+          "longitude": 0.967192
+      },
+      {
+          "latitude": 42.6827349,
+          "longitude": 0.9679602
+      },
+      {
+          "latitude": 42.6825224,
+          "longitude": 0.9685612
+      },
+      {
+          "latitude": 42.6821783,
+          "longitude": 0.9695348
+      },
+      {
+          "latitude": 42.6817126,
+          "longitude": 0.9708523
+      },
+      {
+          "latitude": 42.6810494,
+          "longitude": 0.9727283
+      },
+      {
+          "latitude": 42.6806196,
+          "longitude": 0.9739443
+      },
+      {
+          "latitude": 42.6801259,
+          "longitude": 0.9753409
+      },
+      {
+          "latitude": 42.6799162,
+          "longitude": 0.9759342
+      },
+      {
+          "latitude": 42.6793645,
+          "longitude": 0.9774951
+      },
+      {
+          "latitude": 42.6790749,
+          "longitude": 0.9783142
+      },
+      {
+          "latitude": 42.6788116,
+          "longitude": 0.979059
+      },
+      {
+          "latitude": 42.6786398,
+          "longitude": 0.9795452
+      },
+      {
+          "latitude": 42.6777994,
+          "longitude": 0.9819225
+      },
+      {
+          "latitude": 42.6775392,
+          "longitude": 0.9826586
+      }
+  ]}
+  },
+  {
+    "name": "TSD Blanhiblar",
+    "type": "CHAIRLIFT",
+    "capacity": 2880,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7244018,
+          "longitude": 0.9636515
+      },
+      {
+          "latitude": 42.7243658,
+          "longitude": 0.9634073
+      },
+      {
+          "latitude": 42.7243296,
+          "longitude": 0.9631622
+      },
+      {
+          "latitude": 42.7241883,
+          "longitude": 0.9622042
+      },
+      {
+          "latitude": 42.724008,
+          "longitude": 0.9609816
+      },
+      {
+          "latitude": 42.723955,
+          "longitude": 0.9606226
+      },
+      {
+          "latitude": 42.7238715,
+          "longitude": 0.9600567
+      },
+      {
+          "latitude": 42.7237632,
+          "longitude": 0.9593222
+      },
+      {
+          "latitude": 42.7235624,
+          "longitude": 0.9579612
+      },
+      {
+          "latitude": 42.7233111,
+          "longitude": 0.9562574
+      },
+      {
+          "latitude": 42.7232626,
+          "longitude": 0.9559288
+      },
+      {
+          "latitude": 42.7232029,
+          "longitude": 0.9555238
+      },
+      {
+          "latitude": 42.7229611,
+          "longitude": 0.9538847
+      },
+      {
+          "latitude": 42.7228358,
+          "longitude": 0.953035
+      },
+      {
+          "latitude": 42.7226936,
+          "longitude": 0.9520714
+      },
+      {
+          "latitude": 42.7226494,
+          "longitude": 0.9517717
+      },
+      {
+          "latitude": 42.7224632,
+          "longitude": 0.9505096
+      },
+      {
+          "latitude": 42.7224128,
+          "longitude": 0.9501681
+      },
+      {
+          "latitude": 42.7221847,
+          "longitude": 0.9486218
+      },
+      {
+          "latitude": 42.7220559,
+          "longitude": 0.9477485
+      },
+      {
+          "latitude": 42.7218559,
+          "longitude": 0.9463928
+      },
+      {
+          "latitude": 42.7216766,
+          "longitude": 0.9451771
+      },
+      {
+          "latitude": 42.7214854,
+          "longitude": 0.9438809
+      },
+      {
+          "latitude": 42.7213219,
+          "longitude": 0.9427727
+      },
+      {
+          "latitude": 42.7212729,
+          "longitude": 0.9424404
+      }
+  ]}
+  },
+  {
+    "name": "TSD Bosque",
+    "type": "CHAIRLIFT",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6996978,
+          "longitude": 0.934113
+      },
+      {
+          "latitude": 42.6996736,
+          "longitude": 0.9343729
+      },
+      {
+          "latitude": 42.6996283,
+          "longitude": 0.93486
+      },
+      {
+          "latitude": 42.6995287,
+          "longitude": 0.9359318
+      },
+      {
+          "latitude": 42.6993722,
+          "longitude": 0.9376147
+      },
+      {
+          "latitude": 42.6992663,
+          "longitude": 0.9387536
+      },
+      {
+          "latitude": 42.6992055,
+          "longitude": 0.9394071
+      },
+      {
+          "latitude": 42.6991155,
+          "longitude": 0.9403755
+      },
+      {
+          "latitude": 42.6989799,
+          "longitude": 0.9418336
+      },
+      {
+          "latitude": 42.698864,
+          "longitude": 0.9430798
+      },
+      {
+          "latitude": 42.6987762,
+          "longitude": 0.9440235
+      },
+      {
+          "latitude": 42.6985826,
+          "longitude": 0.9461056
+      },
+      {
+          "latitude": 42.6985216,
+          "longitude": 0.946762
+      }
+  ]}
+  },
+  {
+    "name": "TSD Dera Reina",
+    "type": "CHAIRLIFT",
+    "capacity": 3000,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7242028,
+          "longitude": 0.963913
+      },
+      {
+          "latitude": 42.7241976,
+          "longitude": 0.9639262
+      },
+      {
+          "latitude": 42.7240965,
+          "longitude": 0.9641839
+      },
+      {
+          "latitude": 42.7239216,
+          "longitude": 0.9646294
+      },
+      {
+          "latitude": 42.7237365,
+          "longitude": 0.965101
+      },
+      {
+          "latitude": 42.7233942,
+          "longitude": 0.9659729
+      },
+      {
+          "latitude": 42.7232519,
+          "longitude": 0.9663356
+      },
+      {
+          "latitude": 42.7229059,
+          "longitude": 0.9672169
+      },
+      {
+          "latitude": 42.7225164,
+          "longitude": 0.9682093
+      },
+      {
+          "latitude": 42.722391,
+          "longitude": 0.9685286
+      },
+      {
+          "latitude": 42.7217062,
+          "longitude": 0.9702732
+      },
+      {
+          "latitude": 42.7215207,
+          "longitude": 0.9707458
+      },
+      {
+          "latitude": 42.7212125,
+          "longitude": 0.9715308
+      },
+      {
+          "latitude": 42.7207436,
+          "longitude": 0.9727254
+      },
+      {
+          "latitude": 42.7202229,
+          "longitude": 0.9740518
+      },
+      {
+          "latitude": 42.7197821,
+          "longitude": 0.9751747
+      },
+      {
+          "latitude": 42.7193991,
+          "longitude": 0.9761505
+      },
+      {
+          "latitude": 42.7191317,
+          "longitude": 0.9768317
+      },
+      {
+          "latitude": 42.7185976,
+          "longitude": 0.9781921
+      },
+      {
+          "latitude": 42.7181673,
+          "longitude": 0.9792882
+      },
+      {
+          "latitude": 42.7177248,
+          "longitude": 0.9804154
+      },
+      {
+          "latitude": 42.7175648,
+          "longitude": 0.9808229
+      },
+      {
+          "latitude": 42.7168023,
+          "longitude": 0.9827653
+      },
+      {
+          "latitude": 42.7167258,
+          "longitude": 0.9829601
+      },
+      {
+          "latitude": 42.7162795,
+          "longitude": 0.9840971
+      },
+      {
+          "latitude": 42.7161641,
+          "longitude": 0.984391
+      }
+  ]}
+  },
+  {
+    "name": "TSD Era Cabana",
+    "type": "CHAIRLIFT",
+    "capacity": 2400,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7009564,
+          "longitude": 0.9480439
+      },
+      {
+          "latitude": 42.700923,
+          "longitude": 0.9483015
+      },
+      {
+          "latitude": 42.7008366,
+          "longitude": 0.948968
+      },
+      {
+          "latitude": 42.7006601,
+          "longitude": 0.9503301
+      },
+      {
+          "latitude": 42.700532,
+          "longitude": 0.9513194
+      },
+      {
+          "latitude": 42.700494,
+          "longitude": 0.9516121
+      },
+      {
+          "latitude": 42.7003371,
+          "longitude": 0.952823
+      },
+      {
+          "latitude": 42.7002835,
+          "longitude": 0.953237
+      },
+      {
+          "latitude": 42.7002556,
+          "longitude": 0.9534523
+      },
+      {
+          "latitude": 42.7001202,
+          "longitude": 0.9544973
+      },
+      {
+          "latitude": 42.7000245,
+          "longitude": 0.9552351
+      },
+      {
+          "latitude": 42.6998606,
+          "longitude": 0.9565
+      },
+      {
+          "latitude": 42.6998106,
+          "longitude": 0.9568864
+      },
+      {
+          "latitude": 42.6996761,
+          "longitude": 0.9579244
+      },
+      {
+          "latitude": 42.6996414,
+          "longitude": 0.9581917
+      },
+      {
+          "latitude": 42.699599,
+          "longitude": 0.9585191
+      }
+  ]}
+  },
+  {
+    "name": "TS Manaud",
+    "type": "CHAIRLIFT",
+    "capacity": 1800,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path":  { "points": [
+      {
+          "latitude": 42.6845879,
+          "longitude": 0.9632115
+      },
+      {
+          "latitude": 42.6851899,
+          "longitude": 0.9641127
+      },
+      {
+          "latitude": 42.6855025,
+          "longitude": 0.9645806
+      },
+      {
+          "latitude": 42.685827,
+          "longitude": 0.9650664
+      },
+      {
+          "latitude": 42.6862338,
+          "longitude": 0.9656752
+      },
+      {
+          "latitude": 42.6865359,
+          "longitude": 0.9661275
+      },
+      {
+          "latitude": 42.6865886,
+          "longitude": 0.9662064
+      },
+      {
+          "latitude": 42.6866781,
+          "longitude": 0.9663404
+      },
+      {
+          "latitude": 42.6871933,
+          "longitude": 0.9671116
+      },
+      {
+          "latitude": 42.6878143,
+          "longitude": 0.9680411
+      },
+      {
+          "latitude": 42.6879744,
+          "longitude": 0.9682809
+      },
+      {
+          "latitude": 42.6886123,
+          "longitude": 0.9692357
+      },
+      {
+          "latitude": 42.6890692,
+          "longitude": 0.9699197
+      },
+      {
+          "latitude": 42.6894778,
+          "longitude": 0.9705314
+      },
+      {
+          "latitude": 42.6898666,
+          "longitude": 0.9711134
+      },
+      {
+          "latitude": 42.6908874,
+          "longitude": 0.9726415
+      },
+      {
+          "latitude": 42.6911809,
+          "longitude": 0.9730809
+      },
+      {
+          "latitude": 42.6913592,
+          "longitude": 0.9733478
+      },
+      {
+          "latitude": 42.6914365,
+          "longitude": 0.9734636
+      },
+      {
+          "latitude": 42.6915079,
+          "longitude": 0.9735705
+      },
+      {
+          "latitude": 42.6915912,
+          "longitude": 0.9736951
+      },
+      {
+          "latitude": 42.6918816,
+          "longitude": 0.9741299
+      }
+  ]}
+  },
+  {
+    "name": "TSD Mirador",
+    "type": "CHAIRLIFT",
+    "capacity": 2880,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7005564,
+          "longitude": 0.9473669
+      },
+      {
+          "latitude": 42.7004691,
+          "longitude": 0.947619
+      },
+      {
+          "latitude": 42.7002903,
+          "longitude": 0.9481351
+      },
+      {
+          "latitude": 42.7002613,
+          "longitude": 0.948219
+      },
+      {
+          "latitude": 42.6998668,
+          "longitude": 0.9493581
+      },
+      {
+          "latitude": 42.6994115,
+          "longitude": 0.9506727
+      },
+      {
+          "latitude": 42.6992633,
+          "longitude": 0.9511006
+      },
+      {
+          "latitude": 42.6988532,
+          "longitude": 0.9522847
+      },
+      {
+          "latitude": 42.698183,
+          "longitude": 0.9542199
+      },
+      {
+          "latitude": 42.6978114,
+          "longitude": 0.9552927
+      },
+      {
+          "latitude": 42.6972915,
+          "longitude": 0.9567939
+      },
+      {
+          "latitude": 42.6968366,
+          "longitude": 0.9581075
+      },
+      {
+          "latitude": 42.6966133,
+          "longitude": 0.9587523
+      },
+      {
+          "latitude": 42.6962393,
+          "longitude": 0.9598321
+      },
+      {
+          "latitude": 42.696005,
+          "longitude": 0.9605085
+      },
+      {
+          "latitude": 42.6954449,
+          "longitude": 0.9621258
+      },
+      {
+          "latitude": 42.6953408,
+          "longitude": 0.9624262
+      },
+      {
+          "latitude": 42.6950978,
+          "longitude": 0.9631279
+      },
+      {
+          "latitude": 42.6945661,
+          "longitude": 0.964663
+      },
+      {
+          "latitude": 42.694386,
+          "longitude": 0.965183
+      },
+      {
+          "latitude": 42.6938526,
+          "longitude": 0.9667231
+      },
+      {
+          "latitude": 42.6935554,
+          "longitude": 0.9675811
+      },
+      {
+          "latitude": 42.6929363,
+          "longitude": 0.9693685
+      },
+      {
+          "latitude": 42.692883,
+          "longitude": 0.9695225
+      },
+      {
+          "latitude": 42.6928237,
+          "longitude": 0.9696936
+      },
+      {
+          "latitude": 42.6924382,
+          "longitude": 0.9708065
+      },
+      {
+          "latitude": 42.6923137,
+          "longitude": 0.9711661
+      },
+      {
+          "latitude": 42.6922223,
+          "longitude": 0.9714299
+      },
+      {
+          "latitude": 42.6921985,
+          "longitude": 0.9714986
+      },
+      {
+          "latitude": 42.6920285,
+          "longitude": 0.9719896
+      }
+  ]}
+  },
+  {
+    "name": "TSD Pla de Baqueira",
+    "type": "CHAIRLIFT",
+    "capacity": 3000,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6973306,
+          "longitude": 0.9461589
+      },
+      {
+          "latitude": 42.6972506,
+          "longitude": 0.9464627
+      },
+      {
+          "latitude": 42.6971059,
+          "longitude": 0.9470118
+      },
+      {
+          "latitude": 42.6968097,
+          "longitude": 0.9481363
+      },
+      {
+          "latitude": 42.6965814,
+          "longitude": 0.9490032
+      },
+      {
+          "latitude": 42.6961627,
+          "longitude": 0.9505923
+      },
+      {
+          "latitude": 42.6959991,
+          "longitude": 0.9512134
+      },
+      {
+          "latitude": 42.6957789,
+          "longitude": 0.9520495
+      },
+      {
+          "latitude": 42.6953732,
+          "longitude": 0.9535896
+      },
+      {
+          "latitude": 42.6952879,
+          "longitude": 0.9539133
+      },
+      {
+          "latitude": 42.695016,
+          "longitude": 0.9549454
+      },
+      {
+          "latitude": 42.6948756,
+          "longitude": 0.9554786
+      },
+      {
+          "latitude": 42.694389,
+          "longitude": 0.9573259
+      },
+      {
+          "latitude": 42.6942408,
+          "longitude": 0.9578884
+      },
+      {
+          "latitude": 42.6939396,
+          "longitude": 0.9590315
+      },
+      {
+          "latitude": 42.6934146,
+          "longitude": 0.9610246
+      },
+      {
+          "latitude": 42.6933045,
+          "longitude": 0.9614424
+      },
+      {
+          "latitude": 42.6930176,
+          "longitude": 0.9625318
+      },
+      {
+          "latitude": 42.6926923,
+          "longitude": 0.9637665
+      },
+      {
+          "latitude": 42.6923637,
+          "longitude": 0.9650137
+      },
+      {
+          "latitude": 42.6920389,
+          "longitude": 0.9662468
+      },
+      {
+          "latitude": 42.6919378,
+          "longitude": 0.9666305
+      }
+  ]}
+  },
+  {
+    "name": "TS Solei",
+    "type": "CHAIRLIFT",
+    "capacity": 1800,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6845424,
+          "longitude": 0.9627798
+      },
+      {
+          "latitude": 42.6849657,
+          "longitude": 0.9626698
+      },
+      {
+          "latitude": 42.6854111,
+          "longitude": 0.9625539
+      },
+      {
+          "latitude": 42.6861811,
+          "longitude": 0.9623537
+      },
+      {
+          "latitude": 42.6869051,
+          "longitude": 0.9621654
+      },
+      {
+          "latitude": 42.6870756,
+          "longitude": 0.9621211
+      },
+      {
+          "latitude": 42.6872497,
+          "longitude": 0.9620758
+      },
+      {
+          "latitude": 42.6878813,
+          "longitude": 0.9619115
+      },
+      {
+          "latitude": 42.6881497,
+          "longitude": 0.9618417
+      },
+      {
+          "latitude": 42.6889257,
+          "longitude": 0.9616399
+      },
+      {
+          "latitude": 42.6895696,
+          "longitude": 0.9614724
+      },
+      {
+          "latitude": 42.6897721,
+          "longitude": 0.9614198
+      },
+      {
+          "latitude": 42.6900107,
+          "longitude": 0.9613577
+      },
+      {
+          "latitude": 42.6901236,
+          "longitude": 0.9613283
+      },
+      {
+          "latitude": 42.6901467,
+          "longitude": 0.9613223
+      }
+  ]}
+  },
+  {
+    "name": "TSD Jesús Serra",
+    "type": "CHAIRLIFT",
+    "capacity": 2400,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7057216,
+          "longitude": 0.9556347
+      },
+      {
+          "latitude": 42.7059399,
+          "longitude": 0.9560918
+      },
+      {
+          "latitude": 42.7060942,
+          "longitude": 0.9564149
+      },
+      {
+          "latitude": 42.7062125,
+          "longitude": 0.9566625
+      },
+      {
+          "latitude": 42.7068992,
+          "longitude": 0.9581
+      },
+      {
+          "latitude": 42.7077851,
+          "longitude": 0.9599548
+      },
+      {
+          "latitude": 42.708464,
+          "longitude": 0.9613759
+      },
+      {
+          "latitude": 42.7092116,
+          "longitude": 0.9629412
+      },
+      {
+          "latitude": 42.7101508,
+          "longitude": 0.9649075
+      },
+      {
+          "latitude": 42.7108651,
+          "longitude": 0.966403
+      },
+      {
+          "latitude": 42.7115179,
+          "longitude": 0.9677696
+      },
+      {
+          "latitude": 42.712135,
+          "longitude": 0.9690616
+      },
+      {
+          "latitude": 42.71277,
+          "longitude": 0.9703912
+      },
+      {
+          "latitude": 42.7135861,
+          "longitude": 0.9720998
+      },
+      {
+          "latitude": 42.7143477,
+          "longitude": 0.9736944
+      },
+      {
+          "latitude": 42.7151328,
+          "longitude": 0.9753382
+      },
+      {
+          "latitude": 42.7153297,
+          "longitude": 0.9757505
+      }
+  ]}
+  },
+  {
+    "name": "TSD Jorge Jordana",
+    "type": "CHAIRLIFT",
+    "capacity": 2400,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7050306,
+          "longitude": 0.955331
+      },
+      {
+          "latitude": 42.7047026,
+          "longitude": 0.9558576
+      },
+      {
+          "latitude": 42.7039025,
+          "longitude": 0.9571422
+      },
+      {
+          "latitude": 42.7030912,
+          "longitude": 0.958445
+      },
+      {
+          "latitude": 42.7022588,
+          "longitude": 0.9597813
+      },
+      {
+          "latitude": 42.7019068,
+          "longitude": 0.9603466
+      },
+      {
+          "latitude": 42.7010705,
+          "longitude": 0.9616892
+      },
+      {
+          "latitude": 42.699751,
+          "longitude": 0.9638076
+      },
+      {
+          "latitude": 42.6989547,
+          "longitude": 0.9650861
+      },
+      {
+          "latitude": 42.6982432,
+          "longitude": 0.9662283
+      },
+      {
+          "latitude": 42.6978207,
+          "longitude": 0.9669066
+      },
+      {
+          "latitude": 42.6962173,
+          "longitude": 0.9694807
+      },
+      {
+          "latitude": 42.6952768,
+          "longitude": 0.9709906
+      },
+      {
+          "latitude": 42.6948975,
+          "longitude": 0.9715995
+      },
+      {
+          "latitude": 42.6940908,
+          "longitude": 0.9728946
+      },
+      {
+          "latitude": 42.6937008,
+          "longitude": 0.9735205
+      },
+      {
+          "latitude": 42.6931091,
+          "longitude": 0.9744705
+      },
+      {
+          "latitude": 42.6925025,
+          "longitude": 0.9754442
+      },
+      {
+          "latitude": 42.6923288,
+          "longitude": 0.9757231
+      }
+  ]}
+  },
+  {
+    "name": "TS Esquirós",
+    "type": "CHAIRLIFT",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7029998,
+          "longitude": 0.9389181
+      },
+      {
+          "latitude": 42.7029473,
+          "longitude": 0.9390547
+      },
+      {
+          "latitude": 42.7027788,
+          "longitude": 0.9394931
+      },
+      {
+          "latitude": 42.7024545,
+          "longitude": 0.9403367
+      },
+      {
+          "latitude": 42.7022777,
+          "longitude": 0.9407965
+      },
+      {
+          "latitude": 42.7017653,
+          "longitude": 0.9421295
+      },
+      {
+          "latitude": 42.7012917,
+          "longitude": 0.9433615
+      },
+      {
+          "latitude": 42.7008896,
+          "longitude": 0.9444076
+      },
+      {
+          "latitude": 42.7005661,
+          "longitude": 0.9452491
+      },
+      {
+          "latitude": 42.7003334,
+          "longitude": 0.9458545
+      },
+      {
+          "latitude": 42.7002448,
+          "longitude": 0.9460849
+      }
+  ]}
+  },
+  {
+    "name": "TC Baqueira",
+    "type": "GONDOLA_LIFT",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.696845,
+          "longitude": 0.9341021
+      },
+      {
+          "latitude": 42.696935,
+          "longitude": 0.9341141
+      },
+      {
+          "latitude": 42.6979524,
+          "longitude": 0.93425
+      },
+      {
+          "latitude": 42.6979962,
+          "longitude": 0.9342559
+      },
+      {
+          "latitude": 42.6984453,
+          "longitude": 0.9343159
+      },
+      {
+          "latitude": 42.6987038,
+          "longitude": 0.9343504
+      },
+      {
+          "latitude": 42.6986899,
+          "longitude": 0.9346922
+      },
+      {
+          "latitude": 42.698686,
+          "longitude": 0.9347903
+      },
+      {
+          "latitude": 42.6986497,
+          "longitude": 0.9356836
+      },
+      {
+          "latitude": 42.698599,
+          "longitude": 0.9369341
+      },
+      {
+          "latitude": 42.6985427,
+          "longitude": 0.9383196
+      },
+      {
+          "latitude": 42.6984861,
+          "longitude": 0.9397163
+      },
+      {
+          "latitude": 42.6984271,
+          "longitude": 0.9411685
+      },
+      {
+          "latitude": 42.6983736,
+          "longitude": 0.9424866
+      },
+      {
+          "latitude": 42.6983213,
+          "longitude": 0.9437759
+      },
+      {
+          "latitude": 42.6983075,
+          "longitude": 0.9441157
+      },
+      {
+          "latitude": 42.698245,
+          "longitude": 0.9456582
+      },
+      {
+          "latitude": 42.6982425,
+          "longitude": 0.9457177
+      },
+      {
+          "latitude": 42.6982398,
+          "longitude": 0.9457856
+      },
+      {
+          "latitude": 42.6982248,
+          "longitude": 0.9461548
+      }
+  ]}
+  },
+  {
+    "name": "CT Carreretes 1",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6993615,
+          "longitude": 0.9465148
+      },
+      {
+          "latitude": 42.6989037,
+          "longitude": 0.9474385
+      }
+  ]}
+  },
+  {
+    "name": "CT Carreretes 2",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+        {
+            "latitude": 42.6987684,
+            "longitude": 0.9473182
+        },
+        {
+            "latitude": 42.6982664,
+            "longitude": 0.9483693
+        }
+    ]}
+  },
+  {
+    "name": "CT Bosque",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6991768,
+          "longitude": 0.9461219
+      },
+      {
+          "latitude": 42.6983445,
+          "longitude": 0.9462175
+      }
+  ]}
+  },
+  {
+    "name": "CT Baqueira",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6981364,
+          "longitude": 0.9473359
+      },
+      {
+          "latitude": 42.6977904,
+          "longitude": 0.947396
+      }
+  ]}
+  },
+  {
+    "name": "CT Parc Infantil",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.6979569,
+          "longitude": 0.9469112
+      },
+      {
+          "latitude": 42.6978034,
+          "longitude": 0.9471695
+      }
+  ]}
+  },
+  {
+    "name": "TCD Dossau",
+    "type": "ROPE_TOW",
+    "capacity": 1440,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.736821,
+          "longitude": 0.9987271
+      },
+      {
+          "latitude": 42.736531,
+          "longitude": 0.9991617
+      },
+      {
+          "latitude": 42.736227,
+          "longitude": 0.9996172
+      },
+      {
+          "latitude": 42.7359291,
+          "longitude": 1.0000636
+      }
+  ]}
+  },
+  {
+    "name": "CT Beret",
+    "type": "MAGIC_CARPET",
+    "capacity": 1440,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.727774,
+          "longitude": 0.9663525
+      },
+      {
+          "latitude": 42.7277814,
+          "longitude": 0.9670932
+      }
+  ]}
+  },
+  {
+    "name": "CT Parc Infantil",
+    "type": "MAGIC_CARPET",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7270321,
+          "longitude": 0.9662264
+      },
+      {
+          "latitude": 42.7270685,
+          "longitude": 0.9665662
+      }
+  ]}
+  },
+  {
+    "name": "TQ Saumet",
+    "type": "PLATTER",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7091871,
+          "longitude": 0.965019
+      },
+      {
+          "latitude": 42.7091881,
+          "longitude": 0.9652465
+      },
+      {
+          "latitude": 42.7091917,
+          "longitude": 0.966059
+      },
+      {
+          "latitude": 42.7091797,
+          "longitude": 0.966898
+      },
+      {
+          "latitude": 42.7092002,
+          "longitude": 0.968122
+      },
+      {
+          "latitude": 42.7091498,
+          "longitude": 0.9693527
+      },
+      {
+          "latitude": 42.7091469,
+          "longitude": 0.9704524
+      },
+      {
+          "latitude": 42.7091405,
+          "longitude": 0.971289
+      },
+      {
+          "latitude": 42.7091416,
+          "longitude": 0.9717957
+      },
+      {
+          "latitude": 42.7091185,
+          "longitude": 0.9726612
+      },
+      {
+          "latitude": 42.7092502,
+          "longitude": 0.9738107
+      },
+      {
+          "latitude": 42.7094021,
+          "longitude": 0.9754437
+      },
+      {
+          "latitude": 42.7095455,
+          "longitude": 0.9767445
+      },
+      {
+          "latitude": 42.7096434,
+          "longitude": 0.9777292
+      },
+      {
+          "latitude": 42.7097245,
+          "longitude": 0.9783963
+      }
+  ]}
+  },
+  {
+    "name": "TQ Baciver",
+    "type": "PLATTER",
+    "capacity": 0,
+    "resort": "5f905dac-b03e-4932-a53e-f20f55661c3c",
+    "status": "ACTIVE",
+    "path": { "points": [
+      {
+          "latitude": 42.7043206,
+          "longitude": 0.9782034
+      },
+      {
+          "latitude": 42.7043555,
+          "longitude": 0.9783258
+      },
+      {
+          "latitude": 42.7045159,
+          "longitude": 0.9788879
+      },
+      {
+          "latitude": 42.7048118,
+          "longitude": 0.9799255
+      },
+      {
+          "latitude": 42.7051632,
+          "longitude": 0.9811572
+      },
+      {
+          "latitude": 42.705321,
+          "longitude": 0.9817105
+      },
+      {
+          "latitude": 42.7054895,
+          "longitude": 0.9823011
+      },
+      {
+          "latitude": 42.7056855,
+          "longitude": 0.9829884
+      },
+      {
+          "latitude": 42.7060431,
+          "longitude": 0.9842419
+      },
+      {
+          "latitude": 42.7062308,
+          "longitude": 0.9848998
+      },
+      {
+          "latitude": 42.7065824,
+          "longitude": 0.9861326
+      },
+      {
+          "latitude": 42.7067438,
+          "longitude": 0.9866983
+      },
+      {
+          "latitude": 42.707036,
+          "longitude": 0.9877228
+      },
+      {
+          "latitude": 42.7072716,
+          "longitude": 0.9885486
+      },
+      {
+          "latitude": 42.7076962,
+          "longitude": 0.9900373
+      },
+      {
+          "latitude": 42.7079377,
+          "longitude": 0.990884
+      },
+      {
+          "latitude": 42.7081833,
+          "longitude": 0.9917452
+      },
+      {
+          "latitude": 42.7084562,
+          "longitude": 0.9927019
+      },
+      {
+          "latitude": 42.7087707,
+          "longitude": 0.9938043
+      },
+      {
+          "latitude": 42.7090794,
+          "longitude": 0.9948866
+      },
+      {
+          "latitude": 42.7093891,
+          "longitude": 0.9959724
+      }
+  ]}
+  }
+]
