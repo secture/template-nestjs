@@ -3,8 +3,8 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
-import { AuthService } from '../src/domain/auth.service';
-import { User } from '../src/domain/entities/user.entity';
+import { AuthService } from '../src/api/domain/auth.service';
+import { User } from '../src/shared/domain/entities/user.entity';
 
 describe('GetWebcamsController (e2e)', () => {
   let app: INestApplication;

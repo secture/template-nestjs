@@ -80,7 +80,10 @@ migration-up: ## Run pending migrations
 	@$(MAKE) run-npm cmd=migration:up
 
 seeders-run:
-	@$(MAKE) run-npx cmd=mikro-orm seeder:run --class ResortSeeder
+	@$(MAKE) run-npx cmd=mikro-orm seeder:run
+
+db-fresh:
+	@$(MAKE) run-npx cmd="mikro-orm migration:fresh --seed"
 
 publish:
 	#@docker build --push -t ghcr.io/secture/tineverse/eleve-base:main .

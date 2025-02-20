@@ -4,8 +4,8 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { WINSTON_MODULE_NEST_PROVIDER, WinstonModule } from 'nest-winston';
 import { AppModule } from './app.module';
-import { winstonConfig } from './infrastructure/config/logging.config';
-import { HttpExceptionFilter } from './infrastructure/filters/http-exception.filter';
+import { winstonConfig } from './shared/infrastructure/config/logging.config';
+import { HttpExceptionFilter } from './shared/infrastructure/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {

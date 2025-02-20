@@ -7,8 +7,8 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const mikroOrmConfig: MikroOrmModuleOptions = {
-  entities: ['./dist/src/domain/entities'],
-  entitiesTs: ['./src/domain/entities'],
+  entities: ['./dist/src/shared/domain/entities'],
+  entitiesTs: ['./src/shared/domain/entities'],
   dbName: process.env.DATABASE_NAME,
   driver: PostgreSqlDriver,
   user: process.env.DATABASE_USER,
@@ -21,8 +21,8 @@ const mikroOrmConfig: MikroOrmModuleOptions = {
     pathTs: './migrations',
   },
   seeder: {
-    path: './dist/src/infrastructure/seeder',
-    pathTs: './src/infrastructure/seeder',
+    path: './dist/src/shared/infrastructure/seeder',
+    pathTs: './src/shared/infrastructure/seeder',
   },
   extensions: [Migrator, SeedManager],
 };

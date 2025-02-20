@@ -2,10 +2,10 @@ import { INestApplication, ValidationPipe } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 import * as request from 'supertest';
+import { AuthService } from '../src/api/domain/auth.service';
 import { AppModule } from '../src/app.module';
-import { AuthService } from '../src/domain/auth.service';
-import { User } from '../src/domain/entities/user.entity';
-import { HttpExceptionFilter } from '../src/infrastructure/filters/http-exception.filter';
+import { User } from '../src/shared/domain/entities/user.entity';
+import { HttpExceptionFilter } from '../src/shared/infrastructure/filters/http-exception.filter';
 
 describe('ResortsController (e2e)', () => {
   let app: INestApplication;

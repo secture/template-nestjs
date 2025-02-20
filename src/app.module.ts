@@ -3,24 +3,18 @@ import { HttpModule } from '@nestjs/axios';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { TerminusModule } from '@nestjs/terminus';
 import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
 import mikroOrmConfig from '../mikro-orm.config';
-import controllers from './controllers';
-import handles from './handles';
-import { AppleStrategy } from './infrastructure/auth/apple.strategy';
-import { JwtStrategy } from './infrastructure/auth/jwt.strategy';
-import { winstonConfig } from './infrastructure/config/logging.config';
-import { LoggingInterceptor } from './infrastructure/interceptors/logging.interceptor';
-import { LoggingService } from './infrastructure/logging/logging.service';
-import { RequestContextMiddleware } from './infrastructure/middleware/request-context.middleware';
-import { VersionCheckMiddleware } from './infrastructure/middleware/version-check.middleware';
-import repositories from './repositories';
-import services from './services';
+import { AdminModule } from './admin/admin.module';
+import { ApiModule } from './api/api.module';
+import { LoggingInterceptor } from './api/infrastructure/interceptors/logging.interceptor';
+import { RequestContextMiddleware } from './api/infrastructure/middleware/request-context.middleware';
+import { VersionCheckMiddleware } from './api/infrastructure/middleware/version-check.middleware';
+import { winstonConfig } from './shared/infrastructure/config/logging.config';
+import { SharedModule } from './shared/shared.module';
 
 const configModule = ConfigModule.forRoot({
   isGlobal: true,
@@ -68,34 +62,23 @@ const clsModule = ClsModule.forRoot({
 
 const mikroORM = MikroOrmModule.forRoot(mikroOrmConfig);
 
-const jwtModule = JwtModule.register({
-  secret: process.env.JWT_SECRET,
-  signOptions: { expiresIn: process.env.JWT_TTL },
-});
-
 @Module({
   imports: [
     configModule,
     clsModule,
     mikroORM,
-    TerminusModule,
     HttpModule,
     WinstonModule.forRoot(winstonConfig),
     PassportModule,
-    jwtModule,
+    SharedModule,
+    AdminModule,
+    ApiModule,
   ],
-  controllers: controllers,
   providers: [
     {
       provide: APP_INTERCEPTOR,
       useClass: LoggingInterceptor,
     },
-    LoggingService,
-    AppleStrategy,
-    JwtStrategy,
-    ...repositories,
-    ...services,
-    ...handles,
   ],
 })
 export class AppModule implements NestModule {
