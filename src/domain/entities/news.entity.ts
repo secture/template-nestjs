@@ -1,16 +1,24 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  DateTimeType,
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { Resort } from './resort.entity';
 
 @Entity()
 export class News {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     nullable: true,
     fieldName: 'updated_at',
@@ -20,19 +28,19 @@ export class News {
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Property({ type: 'string', fieldName: 'title' })
+  @Property({ type: StringType, fieldName: 'title' })
   private readonly _title!: string;
 
-  @Property({ type: 'string', fieldName: 'description' })
+  @Property({ type: StringType, fieldName: 'description' })
   private readonly _description!: string;
 
-  @Property({ type: 'string', fieldName: 'url' })
+  @Property({ type: StringType, fieldName: 'url' })
   private readonly _url!: string;
 
-  @Property({ type: 'Date', fieldName: 'date' })
+  @Property({ type: DateTimeType, fieldName: 'date' })
   private readonly _date!: Date;
 
-  @Property({ type: 'string', fieldName: 'image' })
+  @Property({ type: StringType, fieldName: 'image' })
   private readonly _image!: string;
 
   private constructor(

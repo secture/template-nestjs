@@ -1,51 +1,66 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  ArrayType,
+  DateTimeType,
+  Embedded,
+  Entity,
+  Enum,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { GeoPointType } from '../../infrastructure/types/geo-point.type';
+import { ResortServices } from '../enum/resort-services.enum';
 import { Collection } from '../value-objects/collection.value-object';
 import { GeoPoint } from '../value-objects/geo-point.value-object';
 import { ResortContact } from '../value-objects/resort-contact.value-object';
-import { ResortService } from '../value-objects/resort-service.value-object';
 import { ResortTechnicalData } from '../value-objects/resort-technical-data.value-object';
 
 @Entity()
 export class Resort {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt: Date;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Property({ type: 'string', fieldName: 'logo' })
+  @Property({ type: StringType, fieldName: 'logo' })
   private readonly _logo!: string;
 
-  @Property({ type: 'json', fieldName: 'images' })
+  @Property({ type: ArrayType, fieldName: 'images' })
   private readonly _images!: string[];
 
-  @Property({ type: 'json', fieldName: 'technical_data' })
+  @Embedded(() => ResortTechnicalData, { prefix: 'technical_data' })
   private readonly _technicalData!: ResortTechnicalData;
 
-  @Property({ type: 'string', fieldName: 'description' })
+  @Property({ type: StringType, fieldName: 'description' })
   private readonly _description!: string;
 
-  @Property({ type: 'json', fieldName: 'contacts' })
-  private readonly _contacts!: Collection<ResortContact>;
+  @Embedded(() => ResortContact, { prefix: 'resort_contact', array: true })
+  private readonly _contacts!: ResortContact[];
 
-  @Property({ type: 'json', fieldName: 'services' })
-  private readonly _services!: Collection<ResortService>;
+  @Enum({
+    items: () => ResortServices,
+    fieldName: 'services',
+    nativeEnumName: 'resort_services',
+    array: true,
+  })
+  private readonly _services!: ResortServices[];
 
   @Property({ type: GeoPointType, fieldName: 'location' })
   private readonly _location: GeoPoint;
 
-  @Property({ type: 'string', fieldName: 'country' })
+  @Property({ type: StringType, fieldName: 'country' })
   private readonly _country!: string;
 
   constructor(
@@ -54,11 +69,11 @@ export class Resort {
     updatedAt: Date,
     name: string,
     logo: string,
-    images: string[],
+    images: Collection<string>,
     technicalData: ResortTechnicalData,
     description: string,
     contacts: Collection<ResortContact>,
-    services: Collection<ResortService>,
+    services: Collection<ResortServices>,
     location: GeoPoint,
     country: string,
   ) {
@@ -67,11 +82,11 @@ export class Resort {
     this._updatedAt = updatedAt;
     this._name = name;
     this._logo = logo;
-    this._images = images;
+    this._images = [...images.items];
     this._technicalData = technicalData;
     this._description = description;
-    this._contacts = contacts;
-    this._services = services;
+    this._contacts = [...contacts.items];
+    this._services = [...services.items];
     this._location = location;
     this._country = country;
   }
@@ -86,9 +101,11 @@ export class Resort {
     description: string,
     location: GeoPoint,
     country: string,
-    images: string[] = [],
+    images: Collection<string> = Collection.create<string>([]),
     contacts: Collection<ResortContact> = Collection.create<ResortContact>([]),
-    services: Collection<ResortService> = Collection.create<ResortService>([]),
+    services: Collection<ResortServices> = Collection.create<ResortServices>(
+      [],
+    ),
   ): Resort {
     const createdAt = new Date();
 
@@ -133,7 +150,7 @@ export class Resort {
   }
 
   get contacts(): Collection<ResortContact> {
-    return this._contacts;
+    return Collection.from(this._contacts);
   }
 
   get description(): string {
@@ -142,5 +159,9 @@ export class Resort {
 
   get technicalData(): ResortTechnicalData {
     return this._technicalData;
+  }
+
+  get services(): Collection<ResortServices> {
+    return Collection.from(this._services);
   }
 }

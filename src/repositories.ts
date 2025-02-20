@@ -1,10 +1,10 @@
 import { ClassProvider } from '@nestjs/common';
 import { UserRepository } from './domain/repositories/user.repository';
+import { NewsMikroOrmRepository } from './infrastructure/repositories/news.mikro-orm-repository';
 import { RefreshTokenMikroOrmRepository } from './infrastructure/repositories/refresh-token.mikro-orm-repository';
 import { ResortMikroOrmRepository } from './infrastructure/repositories/resort.mikro-orm-repository';
 import { UserMikroOrmRepository } from './infrastructure/repositories/user.mikro-orm-repository';
 import { WebcamMikroOrmRepository } from './infrastructure/repositories/webcam.mikro-orm-repository';
-import { NewsMikroOrmRepository } from './infrastructure/repositories/news.mikro-orm-repository';
 
 const userRepository: ClassProvider<UserRepository> = {
   provide: 'UserRepository',

@@ -1,6 +1,14 @@
+import { Embeddable, Property } from '@mikro-orm/core';
+
+@Embeddable()
 export class ResortTechnicalData {
+  @Property()
   private readonly _kilometersOfTracks: number;
+
+  @Property()
   private readonly _numberOfLifts: number;
+
+  @Property()
   private readonly _numberOfTracks: number;
 
   private constructor(

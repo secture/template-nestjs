@@ -1,36 +1,45 @@
-import { Entity, Enum, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  DateTimeType,
+  Entity,
+  Enum,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { GeoPointType } from '../../infrastructure/types/geo-point.type';
-import { GeoPoint } from '../value-objects/geo-point.value-object';
-import { Resort } from './resort.entity';
-import { POIType } from '../enum/poi-type.enum';
 import { GeoPolygonType } from '../../infrastructure/types/geo-polygon.type';
+import { POIType } from '../enum/poi-type.enum';
+import { GeoPoint } from '../value-objects/geo-point.value-object';
 import { GeoPolygon } from '../value-objects/geo-polygon.value-object';
+import { Resort } from './resort.entity';
 
 @Entity()
 export class POI {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt: Date;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Enum({ items: () => POIType, fieldName: 'type' })
+  @Enum({ items: () => POIType, fieldName: 'type', nativeEnumName: 'poi_type' })
   private readonly _type!: POIType;
 
   @Property({ type: GeoPointType, fieldName: 'location' })
   private readonly _location: GeoPoint;
 
-  @Property({ type: 'string', fieldName: 'description' })
+  @Property({ type: StringType, fieldName: 'description' })
   private readonly _description!: string;
 
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })

@@ -1,6 +1,14 @@
+import { Embeddable, Property } from '@mikro-orm/core';
+
+@Embeddable()
 export class ResortContact {
+  @Property({ fieldName: 'type' })
   private readonly _type: string;
+
+  @Property({ fieldName: 'name' })
   private readonly _name: string;
+
+  @Property({ fieldName: 'value' })
   private readonly _value: string;
 
   private constructor(type: string, name: string, value: string) {

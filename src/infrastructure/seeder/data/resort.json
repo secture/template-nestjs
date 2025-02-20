@@ -28,21 +28,10 @@
             }
         ],
         "services": [
-            {
-                "id": "tracks",
-                "name": "Pistas",
-                "icon": "icon-tracks.png"
-            },
-            {
-                "id": "lifts",
-                "name": "Remontes",
-                "icon": "icon-lifts.png"
-            },
-            {
-                "id": "shops",
-                "name": "Tiendas",
-                "icon": "icon-shops.png"
-            }
+            "slopes",
+            "lifts",
+            "parking",
+            "shops"
         ],
         "webcams": [
             {

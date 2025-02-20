@@ -1,16 +1,24 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  DateTimeType,
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { Resort } from './resort.entity';
 
 @Entity()
 export class Webcam {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
@@ -19,13 +27,13 @@ export class Webcam {
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Property({ type: 'string', fieldName: 'url' })
+  @Property({ type: StringType, fieldName: 'url' })
   private readonly _url!: string;
 
-  @Property({ type: 'Date', fieldName: 'last_updated' })
+  @Property({ type: DateTimeType, fieldName: 'last_updated' })
   private readonly _lastUpdated!: Date;
 
   private constructor(

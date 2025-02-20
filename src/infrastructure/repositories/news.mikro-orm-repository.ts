@@ -14,7 +14,8 @@ export class NewsMikroOrmRepository implements NewsRepository {
   }
 
   findByResort(resortId: string): Promise<News[]> {
-    return this.ormRepo.find({ resort: { id: resortId } });
+    // @ts-expect-error "_resort" is used here for specific database compatibility.
+    return this.ormRepo.find({ _resort: { _id: resortId } });
   }
 
   async save(news: News): Promise<void> {

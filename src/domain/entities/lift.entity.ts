@@ -1,37 +1,55 @@
-import { Entity, Enum, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { LiftStatus, LiftType } from '../enum/lift.enum';
-import { Resort } from './resort.entity';
+import {
+  DateTimeType,
+  Entity,
+  Enum,
+  IntegerType,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { GeoPathType } from '../../infrastructure/types/geo-path.type';
+import { LiftStatus, LiftType } from '../enum/lift.enum';
 import { GeoPath } from '../value-objects/geo-path.value-object';
+import { Resort } from './resort.entity';
 
 @Entity()
 export class Lift {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt: Date;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Enum({ items: () => LiftType, fieldName: 'type' })
+  @Enum({
+    items: () => LiftType,
+    fieldName: 'type',
+    nativeEnumName: 'lift_type',
+  })
   private readonly _type!: LiftType;
 
-  @Property({ type: 'integer', fieldName: 'capacity' })
+  @Property({ type: IntegerType, fieldName: 'capacity' })
   private readonly _capacity!: number;
 
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Enum({ items: () => LiftStatus, fieldName: 'status' })
+  @Enum({
+    items: () => LiftStatus,
+    fieldName: 'status',
+    nativeEnumName: 'lift_status',
+  })
   private readonly _status!: LiftStatus;
 
   @Property({ type: GeoPathType, fieldName: 'path' })

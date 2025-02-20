@@ -1,10 +1,10 @@
 import type { EntityManager } from '@mikro-orm/core';
+import { Seeder } from '@mikro-orm/seeder';
 import { Resort } from '../../domain/entities/resort.entity';
 import { Slope } from '../../domain/entities/slope.entity';
 import { SlopeDifficulty, SlopeStatus } from '../../domain/enum/slope.enum';
-import { Id } from '../../domain/value-objects/id.value-object';
-import { Seeder } from '@mikro-orm/seeder';
 import { GeoPath } from '../../domain/value-objects/geo-path.value-object';
+import { Id } from '../../domain/value-objects/id.value-object';
 
 export class SlopeSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {

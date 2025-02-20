@@ -1,8 +1,8 @@
 import { Resort } from '../entities/resort.entity';
+import { ResortServices } from '../enum/resort-services.enum';
 import { Collection } from '../value-objects/collection.value-object';
 import { GeoPoint } from '../value-objects/geo-point.value-object';
 import { ResortContact } from '../value-objects/resort-contact.value-object';
-import { ResortService } from '../value-objects/resort-service.value-object';
 import { ResortTechnicalData } from '../value-objects/resort-technical-data.value-object';
 
 export class ResortWithDistance extends Resort {
@@ -14,11 +14,11 @@ export class ResortWithDistance extends Resort {
     updatedAt: Date,
     name: string,
     logo: string,
-    images: string[],
+    images: Collection<string>,
     technicalData: ResortTechnicalData,
     description: string,
     contacts: Collection<ResortContact>,
-    services: Collection<ResortService>,
+    services: Collection<ResortServices>,
     location: GeoPoint,
     country: string,
     distance: number,
@@ -51,9 +51,11 @@ export class ResortWithDistance extends Resort {
     location: GeoPoint,
     country: string,
     distance: number,
-    images: string[] = [],
+    images: Collection<string> = Collection.create<string>([]),
     contacts: Collection<ResortContact> = Collection.create<ResortContact>([]),
-    services: Collection<ResortService> = Collection.create<ResortService>([]),
+    services: Collection<ResortServices> = Collection.create<ResortServices>(
+      [],
+    ),
   ): ResortWithDistance {
     const createdAt = new Date();
 

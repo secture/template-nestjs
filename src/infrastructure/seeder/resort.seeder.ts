@@ -10,11 +10,7 @@ import { GeoPoint } from '../../domain/value-objects/geo-point.value-object';
 import { HourlyWeather } from '../../domain/value-objects/hourly-weather.value-object';
 import { Id } from '../../domain/value-objects/id.value-object';
 import { ResortContact } from '../../domain/value-objects/resort-contact.value-object';
-import { ResortService } from '../../domain/value-objects/resort-service.value-object';
 import { WeeklyWeather } from '../../domain/value-objects/weekly-weather.value-object';
-import { SlopeSeeder } from './slope.seeder';
-import { POISeeder } from './POI.seeder';
-import { LiftSeeder } from './lift.seeder';
 
 export class ResortSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -79,15 +75,10 @@ export class ResortSeeder extends Seeder {
         }),
       );
       em.persist(weather);
-
-      await new SlopeSeeder().run(em);
-      await new POISeeder().run(em);
-      await new LiftSeeder().run(em);
-
-      await em.flush();
     }
-  }
 
+    await em.flush();
+  }
   private parseResort(resortData: any) {
     return Resort.create(
       Id.from(resortData.id).toString(),
@@ -99,7 +90,7 @@ export class ResortSeeder extends Seeder {
       resortData.description,
       GeoPoint.from(resortData.location),
       resortData.country,
-      resortData.images,
+      Collection.create<string>(resortData.images),
       Collection.create<ResortContact>(
         resortData.contacts.map((contactData: object) =>
           ResortContact.create(
@@ -109,16 +100,7 @@ export class ResortSeeder extends Seeder {
           ),
         ),
       ),
-      Collection.create<ResortService>(
-        resortData.services.map(
-          (serviceData: { id: string; name: string; icon: string }) =>
-            ResortService.create(
-              serviceData.id,
-              serviceData.name,
-              serviceData.icon,
-            ),
-        ),
-      ),
+      Collection.from(resortData.services),
     );
   }
 }

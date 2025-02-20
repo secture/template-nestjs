@@ -1,37 +1,45 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  BooleanType,
+  DateTimeType,
+  Entity,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { Id } from '../value-objects/id.value-object';
 
 @Entity()
 export class User {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt: Date;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Property({ type: 'string', fieldName: 'surname' })
+  @Property({ type: StringType, fieldName: 'surname' })
   private readonly _surname!: string;
 
-  @Property({ type: 'string', fieldName: 'email' })
+  @Property({ type: StringType, fieldName: 'email' })
   private readonly _email!: string;
 
-  @Property({ nullable: true })
+  @Property({ type: StringType, nullable: true, fieldName: 'apple_id' })
   private readonly _appleId?: string;
 
-  @Property({ nullable: true, type: 'string', fieldName: 'phone' })
+  @Property({ nullable: true, type: StringType, fieldName: 'phone' })
   private _phone?: string;
 
-  @Property({ type: 'boolean', fieldName: 'phone_verified', default: false })
+  @Property({ type: BooleanType, fieldName: 'phone_verified', default: false })
   private readonly _phoneVerified: boolean;
 
   constructor(

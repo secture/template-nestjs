@@ -1,35 +1,44 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  BooleanType,
+  DateTimeType,
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { Id } from '../value-objects/id.value-object';
 import { User } from './user.entity';
 
 @Entity()
 export class RefreshToken {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
   @ManyToOne(() => User, { fieldName: 'user_id' })
   private readonly _user!: User;
 
-  @Property({ type: 'string', fieldName: 'token' })
+  @Property({ type: StringType, fieldName: 'token' })
   private readonly _token!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt!: Date;
 
-  @Property({ type: 'Date', fieldName: 'expires_at' })
+  @Property({ type: DateTimeType, fieldName: 'expires_at' })
   private readonly _expiresAt!: Date;
 
-  @Property({ type: 'boolean', default: false, fieldName: 'is_revoked' })
+  @Property({ type: BooleanType, default: false, fieldName: 'is_revoked' })
   private _isRevoked: boolean;
 
-  @Property({ type: 'string', fieldName: 'device_info' })
+  @Property({ type: StringType, fieldName: 'device_info' })
   private readonly _deviceInfo!: string;
 
   constructor(

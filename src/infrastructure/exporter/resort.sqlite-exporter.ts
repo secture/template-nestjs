@@ -12,7 +12,7 @@ export class ResortSQLiteExporter implements ResortExporter {
     @Inject('ResortRepository')
     private readonly resortRepository: ResortRepository,
     @Inject('RESORT_FILLERS')
-    private readonly exporters: ResortDataFiller<Knex>[],
+    private readonly dataFillers: ResortDataFiller<Knex>[],
   ) {}
   async export(resortId: string): Promise<string> {
     const resort = await this.resortRepository.findById(resortId);
@@ -33,7 +33,8 @@ export class ResortSQLiteExporter implements ResortExporter {
         table.string('location');
         table.string('contacts');
         table.string('description');
-        table.string('technicalData');
+        table.json('technicalData');
+        table.json('services');
       });
     }
 
@@ -43,16 +44,17 @@ export class ResortSQLiteExporter implements ResortExporter {
         name: resort.name,
         logo: resort.logo,
         country: resort.country,
-        location: resort.location.toJSON(),
-        contacts: resort.contacts.toJSON(),
+        location: JSON.stringify(resort.location.toJSON()),
+        contacts: JSON.stringify(resort.contacts.toJSON()),
         description: resort.description,
-        technicalData: resort.technicalData.toJSON(),
+        technicalData: JSON.stringify(resort.technicalData.toJSON()),
+        services: JSON.stringify(resort.services.toJSON()),
       })
       .onConflict('id')
       .merge();
 
-    for (const exporter of this.exporters) {
-      await exporter.fill(resortId, db);
+    for (const dataFiller of this.dataFillers) {
+      await dataFiller.fill(resortId, db);
     }
 
     await db.destroy();

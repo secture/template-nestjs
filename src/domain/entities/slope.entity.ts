@@ -1,37 +1,55 @@
-import { Entity, Enum, ManyToOne, PrimaryKey, Property } from '@mikro-orm/core';
-import { SlopeDifficulty, SlopeStatus } from '../enum/slope.enum';
-import { Resort } from './resort.entity';
-import { GeoPath } from '../value-objects/geo-path.value-object';
+import {
+  DateTimeType,
+  DecimalType,
+  Entity,
+  Enum,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  StringType,
+  UuidType,
+} from '@mikro-orm/core';
 import { GeoPathType } from '../../infrastructure/types/geo-path.type';
+import { SlopeDifficulty, SlopeStatus } from '../enum/slope.enum';
+import { GeoPath } from '../value-objects/geo-path.value-object';
+import { Resort } from './resort.entity';
 
 @Entity()
 export class Slope {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
   private _updatedAt!: Date;
 
-  @Property({ type: 'string', fieldName: 'name' })
+  @Property({ type: StringType, fieldName: 'name' })
   private readonly _name!: string;
 
-  @Enum({ items: () => SlopeDifficulty, fieldName: 'difficulty' })
+  @Enum({
+    items: () => SlopeDifficulty,
+    fieldName: 'difficulty',
+    nativeEnumName: 'slope_difficulty',
+  })
   private readonly _difficulty!: SlopeDifficulty;
 
-  @Property({ type: 'decimal', fieldName: 'length' })
+  @Property({ type: DecimalType, fieldName: 'length' })
   private readonly _length!: number;
 
   @ManyToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Enum({ items: () => SlopeStatus, fieldName: 'status' })
+  @Enum({
+    items: () => SlopeStatus,
+    fieldName: 'status',
+    nativeEnumName: 'slope_status',
+  })
   private readonly _status!: SlopeStatus;
 
   @Property({ type: GeoPathType, fieldName: 'path' })

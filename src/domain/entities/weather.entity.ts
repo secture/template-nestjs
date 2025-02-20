@@ -1,18 +1,27 @@
-import { Entity, OneToOne, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  DateTimeType,
+  DateType,
+  Entity,
+  JsonType,
+  OneToOne,
+  PrimaryKey,
+  Property,
+  UuidType,
+} from '@mikro-orm/core';
 import { HourlyWeather } from '../value-objects/hourly-weather.value-object';
 import { WeeklyWeather } from '../value-objects/weekly-weather.value-object';
 import { Resort } from './resort.entity';
 
 @Entity()
 export class Weather {
-  @PrimaryKey({ type: 'uuid', fieldName: 'id' })
+  @PrimaryKey({ type: UuidType, fieldName: 'id' })
   private readonly _id!: string;
 
-  @Property({ type: 'Date', fieldName: 'created_at' })
+  @Property({ type: DateTimeType, fieldName: 'created_at' })
   private readonly _createdAt!: Date;
 
   @Property({
-    type: 'Date',
+    type: DateTimeType,
     onUpdate: () => new Date(),
     fieldName: 'updated_at',
   })
@@ -21,13 +30,13 @@ export class Weather {
   @OneToOne(() => Resort, { fieldName: 'resort_id' })
   private readonly _resort!: Resort;
 
-  @Property({ type: 'Date', fieldName: 'day' })
+  @Property({ type: DateType, fieldName: 'day' })
   private readonly _day!: Date;
 
-  @Property({ type: 'json', fieldName: 'today' })
+  @Property({ type: JsonType, fieldName: 'today' })
   private readonly _today!: HourlyWeather[];
 
-  @Property({ type: 'json', fieldName: 'weekly' })
+  @Property({ type: JsonType, fieldName: 'weekly' })
   private readonly _weekly!: WeeklyWeather[];
 
   private constructor(

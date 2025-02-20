@@ -1,4 +1,6 @@
-export enum POIType {
+export enum ResortServices {
+  SLOPES = 'slopes',
+  LIFTS = 'lifts',
   RESTROOMS = 'restrooms',
   PARKING = 'parking',
   INFORMATION = 'information',
