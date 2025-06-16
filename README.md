@@ -1,24 +1,25 @@
-# Eleve API
+# Template NestJS
 
 @TODO: add project description
 
 ## 📖 Table of Contents
 
 1. [Features](#-features)
-2. [Installation](#-installation)
+2. [How to Use This Template](#-how-to-use-this-template)
+3. [Installation](#-installation)
     - [Prerequisites](#prerequisites)
     - [Steps](#steps)
-3. [Available Scripts](#-available-scripts)
-4. [Documentation](#-documentation)
+4. [Available Scripts](#-available-scripts)
+5. [Documentation](#-documentation)
     - [Swagger](#swagger)
     - [Healthcheck](#healthcheck)
     - [Project Structure](#project-structure)
     - [Error Handling](#error-handling)
     - [Guides](#guides)
-5. [CI/CD and Releases](#-cicd-and-releases)
-6. [Logging System](#-logging-system)
-7. [Contributions](#-contributions)
-8. [License](#-license)
+6. [CI/CD and Releases](#-cicd-and-releases)
+7. [Logging System](#-logging-system)
+8. [Contributions](#-contributions)
+9. [License](#-license)
 
 ---
 
@@ -32,6 +33,27 @@
 - **Developer Tools**:
   - ESLint, Prettier, Husky, Commitlint.
   - Renovate for dependency updates.
+
+---
+
+## 🧩 How to Use This Template
+
+You can create a new project based on this template in two ways:
+
+### 🖱️ From the GitHub UI
+
+1. Go to the [template repository](https://github.com/secture/template-nestjs)
+2. Click the green `Use this template` button
+3. Choose your new repository name and settings
+4. Click `Create repository`
+
+### 🧑‍💻 From the CLI using GitHub CLI
+
+If you have the [GitHub CLI](https://cli.github.com/) installed, you can run:
+
+```bash
+gh repo create your-new-repo-name --internal --template secture/template-nestjs
+   ```
 
 ---
 
@@ -208,7 +230,7 @@ The API uses a structured logging system based on **Winston**. It provides:
 ### Configuration
 
 - Default log level: `debug`.
-- Set log level using the environment variable:
+- Set the log level using the environment variable:
 
   ```bash
   LOG_LEVEL=info
@@ -218,7 +240,7 @@ For detailed documentation, see the [Logging System Guide](docs/logging.md).
 
 ## 🤝 Contributions
 
-This is a private project. Contributions are managed internally by the team.
+This is a private project. The team manages contributions internally.
 
 - See our [Contributing Guide](CONTRIBUTING.md) for detailed instructions and guidelines.
 

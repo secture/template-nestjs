@@ -15,7 +15,7 @@ help: ## This help.
 .DEFAULT_GOAL := help
 
 ##@ 🚀 Getting started
-install: up ## Install the dependences of the project
+install: up ## Install the dependencies of the project
 	@echo "Installing Node dependencies"
 	@$(API_NPM) install
 
