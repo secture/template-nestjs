@@ -1,7 +1,7 @@
 services:
   api:
-    image: ghcr.io/secture/tineverse/eleve-base:main
-    container_name: eleve_api
+    image: ghcr.io/secture/template-nestjs:main
+    container_name: project_api
     environment:
       NODE_ENV: production
     volumes:
@@ -10,7 +10,7 @@ services:
       - "${PORT:-3000}:3000"
   db:
     image: postgis/postgis:17-3.5
-    container_name: eleve_db
+    container_name: project_db
     restart: always
     volumes:
       - ./etc/db-data:/var/lib/postgresql/data

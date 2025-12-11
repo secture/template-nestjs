@@ -86,9 +86,9 @@ db-fresh:
 	@$(MAKE) run-npx cmd="mikro-orm migration:fresh --seed"
 
 publish:
-	#@docker build --push -t ghcr.io/secture/tineverse/eleve-base:main .
-	@docker buildx build --platform linux/arm64,linux/amd64 --push -t ghcr.io/secture/tineverse/eleve-base:main .
+	#@docker build --push -t ghcr.io/secture/template-nestjs:main .
+	@docker buildx build --platform linux/arm64,linux/amd64 --push -t ghcr.io/secture/template-nestjs:main .
 
 deploy-staging:
-	@docker pull ghcr.io/secture/tineverse/eleve-base:main
+	@docker pull ghcr.io/secture/template-nestjs:main
 	@docker compose -f docker-compose.staging.yaml up -d

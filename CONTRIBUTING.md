@@ -1,6 +1,6 @@
-# Contributing to Eleve API
+# Contributing to Project API
 
-Thank you for taking the time to contribute to Eleve API. This document outlines the guidelines and best practices for
+Thank you for taking the time to contribute to Project API. This document outlines the guidelines and best practices for
 contributing to the project.
 
 ---
@@ -10,8 +10,8 @@ contributing to the project.
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:tineverse/eleve-base.git
-   cd eleve-base
+   git clone https://github.com/secture/template-nestjs.git
+   cd template-nestjs
    ```
 
 2. Create the .env file:
