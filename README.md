@@ -1,6 +1,4 @@
-# Eleve API
-
-@TODO: add project description
+# Project API
 
 ## 📖 Table of Contents
 
@@ -47,8 +45,8 @@
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:tineverse/eleve-base.git
-   cd eleve-base
+   git clone https://github.com/secture/template-nestjs.git
+   cd template-nestjs
    ```
 
 2. Create the .env file:

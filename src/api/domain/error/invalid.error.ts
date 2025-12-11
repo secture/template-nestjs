@@ -1,6 +1,6 @@
-import { EleveError } from './eleve.error';
+import { ProjectError } from './project.error';
 
-export class InvalidError extends EleveError {
+export class InvalidError extends ProjectError {
   constructor(message = 'Not valid') {
     super(message, 'InvalidError');
   }

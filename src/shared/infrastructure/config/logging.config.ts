@@ -9,12 +9,12 @@ export const winstonConfig = {
     format.splat(),
     format.json(),
   ),
-  defaultMeta: { service: 'eleve-api' },
+  defaultMeta: { service: 'project-api' },
   transports: [
     new transports.Console({
       format: format.combine(
         format.colorize(),
-        nestWinstonModuleUtilities.format.nestLike('Eleve API', {
+        nestWinstonModuleUtilities.format.nestLike('Project API', {
           prettyPrint: true,
         }),
       ),

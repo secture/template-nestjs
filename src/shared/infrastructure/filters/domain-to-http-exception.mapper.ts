@@ -6,9 +6,10 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
+import { ProjectError } from '../../../api/domain/error/project.error';
 
 export class DomainToHttpExceptionMapper {
-  static map(exception: any): HttpException {
+  static map(exception: ProjectError): HttpException {
     if (exception.name === 'ConflictError') {
       return new ConflictException(exception.message);
     }
@@ -23,7 +24,7 @@ export class DomainToHttpExceptionMapper {
     }
 
     return new HttpException(
-      'An unexpected error occurred',
+      exception.message ?? 'An unexpected error occurred',
       HttpStatus.INTERNAL_SERVER_ERROR,
     );
   }

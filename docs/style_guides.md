@@ -26,7 +26,7 @@ const userName = 'John Doe';
 - Use `UPPER_CASE` for constants.
 
 ```typescript
-const API_URL = 'https://api.eleve.com';
+const API_URL = 'https://api.project.com';
 ```
 
 ### Classes and Interfaces

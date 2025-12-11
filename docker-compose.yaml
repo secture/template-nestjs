@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: eleve_api
+    container_name: project_api
     ports:
       - "${PORT:-3000}:3000"
       - "${DEBUG_PORT:-9229}:9229"
@@ -14,8 +14,8 @@ services:
       NODE_ENV: development
     command: ["npm", "run", "start:dev"]
   db:
-    image: postgis/postgis:17-3.5
-    container_name: eleve_db
+    image: postgres:17-alpine
+    container_name: project_db
     restart: always
     ports:
       - "5432:5432"
@@ -25,3 +25,4 @@ services:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
+      PGDATA: /var/lib/postgresql/data/project_db
