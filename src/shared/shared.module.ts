@@ -1,17 +1,9 @@
 import { Global, Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from './infrastructure/auth/jwt.strategy';
 import { LoggingService } from './infrastructure/logging/logging.service';
-
-const jwtModule = JwtModule.register({
-  secret: process.env.JWT_SECRET,
-  signOptions: { expiresIn: process.env.JWT_TTL },
-});
 
 @Global()
 @Module({
-  imports: [jwtModule],
-  providers: [LoggingService, JwtStrategy],
-  exports: [LoggingService, jwtModule],
+  providers: [LoggingService],
+  exports: [LoggingService],
 })
 export class SharedModule {}

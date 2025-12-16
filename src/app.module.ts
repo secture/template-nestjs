@@ -1,9 +1,7 @@
 import { MikroOrmModule } from '@mikro-orm/nestjs';
-import { HttpModule } from '@nestjs/axios';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { PassportModule } from '@nestjs/passport';
 import * as Joi from 'joi';
 import { WinstonModule } from 'nest-winston';
 import { ClsModule } from 'nestjs-cls';
@@ -67,9 +65,7 @@ const mikroORM = MikroOrmModule.forRoot(mikroOrmConfig);
     configModule,
     clsModule,
     mikroORM,
-    HttpModule,
     WinstonModule.forRoot(winstonConfig),
-    PassportModule,
     SharedModule,
     AdminModule,
     ApiModule,

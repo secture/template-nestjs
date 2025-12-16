@@ -3,7 +3,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { GetAppVersionsHandler } from '../../application/get-app-versions/get-app-versions.handler';
 import { AppVersionsHttpResponse } from '../dto/response/app-versions.http-response';
 
-@ApiTags('Élevé')
+@ApiTags('Project')
 @Controller()
 export class AppController {
   constructor(private readonly getAppVersionsHandler: GetAppVersionsHandler) {}
