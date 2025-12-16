@@ -22,10 +22,10 @@ async function bootstrap() {
   });
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('Élevé')
-    .setDescription('The Élevé API description')
+    .setTitle('Project API')
+    .setDescription('The Project API description')
     .setVersion('1.0')
-    .addTag('Élevé')
+    .addTag('Project')
     .addBearerAuth()
     .addGlobalParameters({
       name: 'x-correlation-id',
