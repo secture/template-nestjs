@@ -2,7 +2,7 @@ DOCKER_COMPOSE = docker compose
 DOCKER_API = $(DOCKER_COMPOSE) exec api
 API_NPM = $(DOCKER_API) npm
 API_NPX = $(DOCKER_API) npx
-API_BASH = $(DOCKER_API) /bin/bash
+API_BASH = $(DOCKER_API) /bin/sh
 
 # Add task to .PHONY
 .PHONY: help install add-dep add-dev-dep up start down stop build terminal run-npm run-npx test test-e2e lint release
