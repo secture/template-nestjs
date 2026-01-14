@@ -1,4 +1,4 @@
-FROM node:22
+FROM node:24.11-alpine
 
 WORKDIR /app
 
@@ -9,7 +9,3 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-
-EXPOSE 3000
-
-CMD ["node", "dist/src/main"]
